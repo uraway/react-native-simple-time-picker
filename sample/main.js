@@ -23,12 +23,16 @@ export default class TimePicker extends Component {
     selectedHours: PropTypes.number,
     selectedMinutes: PropTypes.number,
     onChange: PropTypes.func,
+    hoursUnit: PropTypes.string,
+    minutesUnit: PropTypes.string,
   }
 
   static defaultProps = {
     selectedHours: 0,
     selectedMinutes: 0,
     onChange: null,
+    hoursUnit: '',
+    minutesUnit: '',
   }
 
   constructor(props) {
@@ -42,9 +46,10 @@ export default class TimePicker extends Component {
 
   getHoursItems = () => {
     const items = [];
+    const { hoursUnit } = this.props;
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={i.toString()} />,
+        <Picker.Item key={i} value={i} label={`${i.toString()}${hoursUnit}`} />,
       );
     }
     return items;
@@ -52,9 +57,10 @@ export default class TimePicker extends Component {
 
   getMinutesImtes = () => {
     const items = [];
+    const { minutesUnit } = this.props;
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={i.toString()} />,
+        <Picker.Item key={i} value={i} label={`${i.toString()}${minutesUnit}`} />,
       );
     }
     return items;

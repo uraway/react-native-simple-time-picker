@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import TimePicker from 'react-native-simple-time-picker';
+import TimePicker from './main';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +27,8 @@ export default class App extends Component {
           selectedHours={selectedHours}
           selectedMinutes={selectedMinutes}
           onChange={(hours, minutes) => this.setState({ selectedHours: hours, selectedMinutes: minutes })}
+          hoursUnit="h"
+          minutesUnit="m"
         />
       </View>
     );
