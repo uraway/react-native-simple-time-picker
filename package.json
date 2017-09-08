@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-time-picker",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": false,
   "devDependencies": {
     "babel-eslint": "^7.2.3",
