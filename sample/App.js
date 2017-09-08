@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import TimePicker from './main';
+import TimePicker from 'react-native-simple-time-picker';
 
 const styles = StyleSheet.create({
   container: {

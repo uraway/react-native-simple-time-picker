@@ -4376,13 +4376,11 @@ react-native-scripts@1.3.0:
     rimraf "^2.6.1"
     xdl "44.0.0"
 
-react-native-simple-time-picker@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-simple-time-picker/-/react-native-simple-time-picker-0.1.0.tgz#054d3f80ccca1ac05f25f1f7e6d2d5f6cdddd174"
+react-native-simple-time-picker@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-time-picker/-/react-native-simple-time-picker-0.2.0.tgz#b1a12a7880ac2f5a1200b0bc3d3c0065196097dc"
   dependencies:
     prop-types "^15.5.10"
-    react "16.0.0-alpha.12"
-    react-native "^0.47.0"
 
 react-native-svg@5.3.0:
   version "5.3.0"
