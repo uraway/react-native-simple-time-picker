@@ -48,8 +48,10 @@ export default class App extends Component {
 
 ## API
 
-| Property        | Type        | Default      |
-|-----------------|-------------|--------------|
-| selectedHours   | Number      | 0            |
-| selectedMinutes | Number      | 0            |
-| onChange        | Function    | Callback function for when values are changed `function(hours: number, minutes: number) => void`|
+| Property        | Type        | Default      | Description |
+|-----------------|-------------|--------------|-------------|
+| selectedHours   | Number      | 0            |             |
+| selectedMinutes | Number      | 0            |             |
+| onChange        | Function    | null         | Callback function for when values are changed `function(hours: number, minutes: number) => void`|
+| hoursUnit       | String      | ''           | Hours Unit for label  |
+| minutesUnit     | String      | ''           | Minutes Unit for label|
