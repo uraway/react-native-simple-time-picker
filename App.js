@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const MAX_HOURS = 24;
-const MAX_MINUTES = 60;
+const MAX_HOURS = 23;
+const MAX_MINUTES = 59;
 
 export default class TimePicker extends Component {
   static propTypes = {
@@ -49,7 +49,7 @@ export default class TimePicker extends Component {
     const { hoursUnit } = this.props;
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i.toString()}${hoursUnit}`} />,
+        <Picker.Item key={i} value={i} label={`${i.toString()} ${hoursUnit}`} />,
       );
     }
     return items;
@@ -60,7 +60,7 @@ export default class TimePicker extends Component {
     const { minutesUnit } = this.props;
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i.toString()}${minutesUnit}`} />,
+        <Picker.Item key={i} value={i} label={`${i.toString()} ${minutesUnit}`} />,
       );
     }
     return items;
