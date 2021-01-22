@@ -36,9 +36,9 @@ export default class App extends Component {
       <View style={styles.container}>
         <Text>{selectedHours}:{selectedMinutes}</Text>
         <TimePicker
-          selectedHours={selectedHours}
-          selectedMinutes={selectedMinutes}
-          onChange={(hours, minutes) => this.setState({ selectedHours: hours, selectedMinutes: minutes })}
+          hours={selectedHours}
+          minutes={selectedMinutes}
+          onChange={({ hours, minutes }) => this.setState({ selectedHours: hours, selectedMinutes: minutes })}
         />
       </View>
     );
@@ -50,8 +50,8 @@ export default class App extends Component {
 
 | Property        | Type        | Default      | Description |
 |-----------------|-------------|--------------|-------------|
-| selectedHours   | Number      | 0            |             |
-| selectedMinutes | Number      | 0            |             |
-| onChange        | Function    | null         | Callback function for when values are changed `function(hours: number, minutes: number) => void`|
+| hours           | Number      | 0            |             |
+| minutes         | Number      | 0            |             |
+| onChange        | Function    |              | Callback function for when values are changed `function({ hours: number, minutes: number }) => void`|
 | hoursUnit       | String      | ''           | Hours Unit for label  |
 | minutesUnit     | String      | ''           | Minutes Unit for label|
