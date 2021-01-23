@@ -3,8 +3,8 @@
 ## Install
 
 ```
-npm install react-native-simple-time-picker
-yarn add react-native-simple-time-picker
+npm install react-native-simple-time-picker @react-native-picker/picker
+yarn add react-native-simple-time-picker @react-native-picker/picker
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ yarn add react-native-simple-time-picker
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import TimePicker from 'react-native-simple-time-picker';
+import { TimePicker } from 'react-native-simple-time-picker';
 
 const styles = StyleSheet.create({
   container: {
