@@ -1,4 +1,17 @@
-node_modules/
-.expo/
+node_modules/**/*
+.expo/*
 npm-debug.*
-sample/main.js
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+
+lib
+sample
+.eslintcache
