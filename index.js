@@ -1,24 +1,11 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Picker } from "@react-native-community/picker";
-
-export type ValueMap = {
-  hours: number;
-  minutes: number
-}
-
-export type TimePickerProps = {
-  value?: ValueMap;
-  onChange?: ({ hours, minutes }: ValueMap) => void;
-  hoursUnit?: string;
-  minutesUnit?: string;
-};
-
+import { Picker } from "@react-native-picker/picker";
 
 const MAX_HOURS = 24;
 const MAX_MINUTES = 60;
 
-export function TimePicker({ value, onChange, hoursUnit, minutesUnit }: TimePickerProps) {
+export function TimePicker({ value, onChange, hoursUnit, minutesUnit }) {
   const [internalHours, setInternalHours] = useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = useState(value?.minutes ?? 0);
 
@@ -26,7 +13,7 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }: TimePick
     const items = [];
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i}${hoursUnit}`} />
+        <Picker.Item key={i} value={i} label={`${i}${hoursUnit ?? ''}`} />
       );
     }
     return items;
@@ -36,13 +23,13 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }: TimePick
     const items = [];
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i}${minutesUnit}`} />
+        <Picker.Item key={i} value={i} label={`${i}${minutesUnit ?? ''}`} />
       );
     }
     return items;
   };
 
-  const handleChangeHours = (hours: number) => {
+  const handleChangeHours = (hours) => {
     setInternalHours(hours)
     const newValue = {
       minutes: internalMinutes,
@@ -51,7 +38,7 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }: TimePick
     onChange?.(newValue)
   };
 
-  const handleChangeMinutes = (minutes: number) => {
+  const handleChangeMinutes = (minutes) => {
     setInternalMinutes(minutes);
     const newValue = {
       minutes,
@@ -65,14 +52,14 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }: TimePick
       <Picker
         style={styles.picker}
         selectedValue={internalHours}
-        onValueChange={(itemValue) => handleChangeHours(itemValue as number)}
+        onValueChange={(itemValue) => handleChangeHours(itemValue)}
       >
         {getHoursItems()}
       </Picker>
       <Picker
         style={styles.picker}
         selectedValue={internalMinutes}
-        onValueChange={(itemValue) => handleChangeMinutes(itemValue as number)}
+        onValueChange={(itemValue) => handleChangeMinutes(itemValue)}
       >
         {getMinutesItems()}
       </Picker>
