@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
-const MAX_HOURS = 24;
-const MAX_MINUTES = 60;
+const MAX_HOURS = 23;
+const MAX_MINUTES = 59;
 
 export function TimePicker({ value, onChange, hoursUnit, minutesUnit }) {
   const [internalHours, setInternalHours] = useState(value?.hours ?? 0);
@@ -13,7 +13,7 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }) {
     const items = [];
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i}${hoursUnit ?? ''}`} />
+        <Picker.Item key={i} value={i} label={`${i} ${hoursUnit ?? ''}`} />
       );
     }
     return items;
@@ -23,7 +23,7 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }) {
     const items = [];
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={`${i}${minutesUnit ?? ''}`} />
+        <Picker.Item key={i} value={i} label={`${i} ${minutesUnit ?? ''}`} />
       );
     }
     return items;
