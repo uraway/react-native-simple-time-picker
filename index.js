@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { zeroPad } from './utils/zeroPad';
@@ -15,6 +15,11 @@ export function TimePicker({
 }) {
   const [internalHours, setInternalHours] = useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = useState(value?.minutes ?? 0);
+
+  useEffect(() => {
+    setInternalHours(value?.hours);
+    setInternalMinutes(value?.minutes);
+  }, [value]);
 
   const getLabel = (i, unit) => {
     const numString = zeroPadding ? zeroPad(i) : i.toString();
