@@ -45,5 +45,4 @@ export default YourApp;
 
 ## Preview
 
-<div data-snack-id="@uraway/6db199" data-snack-platform="ios" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
-<script async src="https://snack.expo.io/embed.js"></script>
+https://snack.expo.io/vy4qwcOOK
