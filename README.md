@@ -42,6 +42,7 @@ export default YourApp;
 | onChange        | Function    |              | Callback function for when values are changed `function({ hours: number, minutes: number }) => void`|
 | hoursUnit       | String      | ''           | Hours Unit for label  |
 | minutesUnit     | String      | ''           | Minutes Unit for label|
+| zeroPadding     | Boolean     | false        | Whether to pad a numeric string with zero |
 
 ## Preview
 
