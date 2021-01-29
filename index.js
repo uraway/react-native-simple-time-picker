@@ -42,7 +42,7 @@ export function TimePicker({ value, onChange, hoursUnit, minutesUnit }) {
     setInternalMinutes(minutes);
     const newValue = {
       minutes,
-      hours: internalMinutes,
+      hours: internalHours,
     };
     onChange?.(newValue);
   };
