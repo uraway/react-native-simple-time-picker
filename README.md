@@ -1,4 +1,4 @@
-![](http://i.imgur.com/3dMcpRM.png)
+![](https://i.imgur.com/z47iHvd.png)
 
 ## Install
 
@@ -10,40 +10,27 @@ yarn add react-native-simple-time-picker @react-native-picker/picker
 ## Usage
 
 ```javascript
-import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { TimePicker } from 'react-native-simple-time-picker'
 
-import { TimePicker } from 'react-native-simple-time-picker';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-export default class App extends Component {
-  state = {
-    selectedHours: 0,
-    selectedMinutes: 0,
+const YourApp = () => {
+  const [hours, setHours] = React.useState(0)
+  const [minutes, setMinutes] = React.useState(0)
+  const handleChange = (values: { hours: number, minutes: number }) => {
+    const { hours, minutes } = values;
+    setHours(hours);
+    setMinutes(minutes);
   }
-
-  render() {
-    const { selectedHours, selectedMinutes } = this.state;
-    return (
-      <View style={styles.container}>
-        <Text>{selectedHours}:{selectedMinutes}</Text>
-        <TimePicker
-          hours={selectedHours}
-          minutes={selectedMinutes}
-          onChange={({ hours, minutes }) => this.setState({ selectedHours: hours, selectedMinutes: minutes })}
-        />
-      </View>
-    );
-  }
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>{hours} : {minutes}</Text>
+      <TimePicker hours={hours} minutes={minutes} onChange={handleChange} />
+    </View>
+  );
 }
+
+export default YourApp;
 ```
 
 ## API
@@ -55,3 +42,7 @@ export default class App extends Component {
 | onChange        | Function    |              | Callback function for when values are changed `function({ hours: number, minutes: number }) => void`|
 | hoursUnit       | String      | ''           | Hours Unit for label  |
 | minutesUnit     | String      | ''           | Minutes Unit for label|
+
+## Preview
+
+https://snack.expo.io/vy4qwcOOK
