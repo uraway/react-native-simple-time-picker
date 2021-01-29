@@ -7,7 +7,12 @@
     "plugin:prettier/recommended"
   ],
   "plugins": ["react", "prettier"],
-  "ecmaVersion": "es6",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
     "import/no-unresolved": 0,
     "prettier/prettier": [
@@ -21,7 +26,10 @@
     ],
     "no-use-before-define": "off",
     "import/extensions": ["error", "never"],
-    "react/prop-types": 0,
-    "no-shadow": "off"
+    "react/prop-types": "off",
+    "no-shadow": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": "off",
+    "no-plusplus": "off"
   }
 }
