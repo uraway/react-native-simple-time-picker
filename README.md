@@ -17,7 +17,7 @@ import { TimePicker } from "./index";
 const YourApp = () => {
   const [hours, setHours] = React.useState(0);
   const [minutes, setMinutes] = React.useState(0);
-  const handleChange = (values: { hours: number; minutes: number }) => {
+  const handleChange = (values: { hours: number, minutes: number }) => {
     const { hours, minutes } = values;
     setHours(hours);
     setMinutes(minutes);
@@ -42,13 +42,14 @@ export default YourApp;
 
 ## API
 
-| Property        | Type                                    | Default      | Description                                                                                         |
-|-----------------|-------------                            |--------------|-------------                                                                                        |
-| value           | { minutes: number, hours: number }      |{ minutes: 0, hours: 0 }         |                                                                                  |
-| onChange        | Function                                |              | Callback function for when values are changed `({ hours: number, minutes: number }) => void`        |
-| hoursUnit       | String                                  | ''           | Hours Unit for label                                                                                |
-| minutesUnit     | String                                  | ''           | Minutes Unit for label                                                                              |
-| zeroPadding     | Boolean                                 | false        | Whether to pad numeric labels with zero                                                            |
+| Property    | Type                               | Default                  | Description                                                                                  |
+| ----------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
+| value       | { minutes: number, hours: number } | { minutes: 0, hours: 0 } |                                                                                              |
+| onChange    | Function                           |                          | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
+| hoursUnit   | String                             | ''                       | Hours Unit for label                                                                         |
+| minutesUnit | String                             | ''                       | Minutes Unit for label                                                                       |
+| zeroPadding | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
+| textColor   | String                             |                          | Color of the picker item's text                                                              |
 
 ## Preview
 

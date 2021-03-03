@@ -13,7 +13,8 @@ export type TimePickerProps = {
   onChange?: ({ hours, minutes }: ValueMap) => void;
   hoursUnit?: string;
   minutesUnit?: string;
-  zeroPadding?: boolean
+  zeroPadding?: boolean;
+  textColor?: string
 };
 
 export declare function TimePicker({

@@ -12,6 +12,7 @@ export function TimePicker({
   hoursUnit,
   minutesUnit,
   zeroPadding = false,
+  textColor,
 }) {
   const [internalHours, setInternalHours] = useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = useState(value?.minutes ?? 0);
@@ -30,7 +31,12 @@ export function TimePicker({
     const items = [];
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={getLabel(i, hoursUnit)} />,
+        <Picker.Item
+          key={i}
+          value={i}
+          label={getLabel(i, hoursUnit)}
+          color={textColor}
+        />,
       );
     }
     return items;
@@ -40,7 +46,12 @@ export function TimePicker({
     const items = [];
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={getLabel(i, minutesUnit)} />,
+        <Picker.Item
+          key={i}
+          value={i}
+          label={getLabel(i, minutesUnit)}
+          color={textColor}
+        />,
       );
     }
     return items;
