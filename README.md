@@ -42,6 +42,7 @@ const YourApp = () => {
 | textColor       | String                             |                          | Color of the picker item's text                                                              |
 | hoursInterval   | Integer                            | 1                        |                                                                                              |
 | minutesInterval | Integer                            | 1                        |                                                                                              |
+| pickerShows     | Array                              | `["hours", "minutes"]`   | Pickers to display (`e.g. ["hours", "minutes", "seconds"]`)                                  |
 
 ## Preview
 
