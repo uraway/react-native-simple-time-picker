@@ -59,4 +59,4 @@ export default YourApp;
 
 ## Preview
 
-https://snack.expo.io/vy4qwcOOK
+https://snack.expo.io/@uraway/react-native-simple-time-picker
