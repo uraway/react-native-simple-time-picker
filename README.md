@@ -32,15 +32,17 @@ const YourApp = () => {
 
 ## Props
 
-| Property    | Type                               | Default                  | Description                                                                                  |
-| ----------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
-| value       | { minutes: number, hours: number } | { minutes: 0, hours: 0 } |                                                                                              |
-| onChange    | Function                           |                          | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
-| hoursUnit   | String                             | ''                       | Hours Unit for label                                                                         |
-| minutesUnit | String                             | ''                       | Minutes Unit for label                                                                       |
-| zeroPadding | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
-| textColor   | String                             |                          | Color of the picker item's text                                                              |
-| itemStyle   | Text Style Props                   |                          | Style to apply to each of the labels (https://reactnative.dev/docs/text-style-props)         |
+| Property        | Type                               | Default                  | Description                                                                                  |
+| --------------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
+| value           | { minutes: number, hours: number } | { minutes: 0, hours: 0 } |                                                                                              |
+| onChange        | Function                           |                          | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
+| hoursUnit       | String                             | ''                       | Hours Unit for label                                                                         |
+| minutesUnit     | String                             | ''                       | Minutes Unit for label                                                                       |
+| zeroPadding     | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
+| textColor       | String                             |                          | Color of the picker item's text                                                              |
+| itemStyle       | Text Style Props                   |                          | Style to apply to each of the labels (https://reactnative.dev/docs/text-style-props)         |
+| hoursInterval   | Integer                            | 1                        |                                                                                              |
+| minutesInterval | Integer                            | 1                        |                                                                                              |
 
 ## Preview
 

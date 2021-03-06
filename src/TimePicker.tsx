@@ -20,6 +20,8 @@ export type TimePickerProps = {
   zeroPadding?: boolean;
   textColor?: string;
   itemStyle?: StyleProp<TextStyle>;
+  hoursInterval?: number;
+  minutesInterval?: number;
 };
 
 export function TimePicker({
@@ -30,7 +32,13 @@ export function TimePicker({
   zeroPadding = false,
   textColor,
   itemStyle,
+  hoursInterval = 1,
+  minutesInterval = 1,
 }: TimePickerProps) {
+  if (hoursInterval > MAX_HOURS || minutesInterval > MAX_MINUTES) {
+    throw new Error('value of hoursInterval or minutesInterval is invalid.');
+  }
+
   const [internalHours, setInternalHours] = React.useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = React.useState(
     value?.minutes ?? 0,
@@ -48,7 +56,7 @@ export function TimePicker({
 
   const getHoursItems = () => {
     const items: React.ReactElement[] = [];
-    for (let i = 0; i <= MAX_HOURS; i++) {
+    for (let i = 0; i <= MAX_HOURS; i += hoursInterval) {
       items.push(
         <Picker.Item
           testID="hoursItem"
@@ -64,7 +72,7 @@ export function TimePicker({
 
   const getMinutesItems = () => {
     const items: React.ReactElement[] = [];
-    for (let i = 0; i <= MAX_MINUTES; i++) {
+    for (let i = 0; i <= MAX_MINUTES; i += minutesInterval) {
       items.push(
         <Picker.Item
           testID="minutesItem"

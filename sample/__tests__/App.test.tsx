@@ -17,6 +17,24 @@ describe('ReactNativeSimpleTimePicker', () => {
     expect(wrapper.find({testID: 'minutesItem'}).length).toBe(60);
   });
 
+  it('should render all hours and minutes items with interval props', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker hoursInterval={5} minutesInterval={15} />,
+    );
+    expect(wrapper.find({testID: 'hoursItem'}).length).toBe(5);
+    expect(wrapper.find({testID: 'minutesItem'}).length).toBe(4);
+  });
+
+  it('should fail to render with invalid interval prop', () => {
+    expect(() =>
+      shallow<typeof TimePicker>(<TimePicker hoursInterval={24} />),
+    ).toThrowError();
+
+    expect(() =>
+      shallow<typeof TimePicker>(<TimePicker minutesInterval={60} />),
+    ).toThrowError();
+  });
+
   it('should render units', () => {
     const wrapper = shallow<typeof TimePicker>(
       <TimePicker hoursUnit="h" minutesUnit="m" />,

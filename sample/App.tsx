@@ -23,6 +23,8 @@ const YourApp = () => {
         value={{hours, minutes}}
         onChange={handleChange}
         itemStyle={styles.itemStyle}
+        hoursInterval={5}
+        minutesInterval={15}
       />
     </View>
   );
