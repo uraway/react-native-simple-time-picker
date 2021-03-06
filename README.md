@@ -55,6 +55,7 @@ export default YourApp;
 | hoursUnit   | String                             | ''                       | Hours Unit for label                                                                         |
 | minutesUnit | String                             | ''                       | Minutes Unit for label                                                                       |
 | zeroPadding | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
+| textColor   | String                             |                          | Color of the picker item's text                                                              |
 
 ## Preview
 
