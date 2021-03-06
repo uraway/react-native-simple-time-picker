@@ -17,36 +17,20 @@ expo install @react-native-picker/picker
 
 ```javascript
 import React from 'react';
-import {Text, View, Button} from 'react-native';
-import {TimePicker} from './index';
+import {TimePicker} from 'react-native-simple-time-picker';
 
 const YourApp = () => {
   const [hours, setHours] = React.useState(0);
   const [minutes, setMinutes] = React.useState(0);
-  const handleChange = (values: {hours: number, minutes: number}) => {
-    const {hours, minutes} = values;
-    setHours(hours);
-    setMinutes(minutes);
+  const handleChange = (value: {hours: number, minutes: number}) => {
+    setHours(value.hours);
+    setMinutes(value.minutes);
   };
-  const handleReset = () => {
-    setHours(0);
-    setMinutes(0);
-  };
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>
-        {hours} : {minutes}
-      </Text>
-      <Button title="RESET" onPress={handleReset} />
-      <TimePicker value={{hours, minutes}} onChange={handleChange} />
-    </View>
-  );
+  return <TimePicker value={{hours, minutes}} onChange={handleChange} />;
 };
-
-export default YourApp;
 ```
 
-## API
+## Props
 
 | Property    | Type                               | Default                  | Description                                                                                  |
 | ----------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
