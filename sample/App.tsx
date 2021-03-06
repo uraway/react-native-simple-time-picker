@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, View, Button} from 'react-native';
-import {TimePicker} from 'react-native-simple-time-picker';
+import {Text, View, Button, StyleSheet} from 'react-native';
+import {TimePicker} from './lib';
 
 const YourApp = () => {
   const [hours, setHours] = React.useState(0);
@@ -14,18 +14,29 @@ const YourApp = () => {
     setMinutes(0);
   };
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={styles.container}>
       <Text>
         {hours} : {minutes}
       </Text>
       <Button title="RESET" onPress={handleReset} />
       <TimePicker
-        textColor="red"
         value={{hours, minutes}}
         onChange={handleChange}
+        itemStyle={styles.itemStyle}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemStyle: {
+    margin: 24,
+  },
+});
 
 export default YourApp;
