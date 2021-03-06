@@ -1,6 +1,8 @@
 import * as React from 'react';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {View, StyleSheet, StyleProp, TextStyle} from 'react-native';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {PickerProps} from '@react-native-picker/picker/typings/Picker';
 import {Picker} from '@react-native-picker/picker';
 import {zeroPad} from './utils/zeroPad';
 
@@ -12,17 +14,16 @@ export type ValueMap = {
   minutes: number;
 };
 
-export type TimePickerProps = {
+export interface TimePickerProps extends PickerProps {
   value?: ValueMap;
   onChange?: ({hours, minutes}: ValueMap) => void;
   hoursUnit?: string;
   minutesUnit?: string;
   zeroPadding?: boolean;
   textColor?: string;
-  itemStyle?: StyleProp<TextStyle>;
   hoursInterval?: number;
   minutesInterval?: number;
-};
+}
 
 export function TimePicker({
   value,
@@ -31,9 +32,9 @@ export function TimePicker({
   minutesUnit,
   zeroPadding = false,
   textColor,
-  itemStyle,
   hoursInterval = 1,
   minutesInterval = 1,
+  ...others
 }: TimePickerProps) {
   if (hoursInterval > MAX_HOURS || minutesInterval > MAX_MINUTES) {
     throw new Error('value of hoursInterval or minutesInterval is invalid.');
@@ -108,7 +109,6 @@ export function TimePicker({
     <View style={styles.container}>
       <Picker
         testID="hoursPicker"
-        itemStyle={itemStyle}
         style={styles.picker}
         selectedValue={internalHours}
         onValueChange={(itemValue) => handleChangeHours(itemValue)}>
@@ -116,10 +116,10 @@ export function TimePicker({
       </Picker>
       <Picker
         testID="minutesPicker"
-        itemStyle={itemStyle}
         style={styles.picker}
         selectedValue={internalMinutes}
-        onValueChange={(itemValue) => handleChangeMinutes(itemValue)}>
+        onValueChange={(itemValue) => handleChangeMinutes(itemValue)}
+        {...others}>
         {getMinutesItems()}
       </Picker>
     </View>
