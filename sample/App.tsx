@@ -1,91 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import {useState} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+import {Text, View, Button} from 'react-native';
 import {TimePicker} from 'react-native-simple-time-picker';
 
-declare const global: {HermesInternal: null | {}};
-
-const App = () => {
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const handleChange = (values: {hours: number; minutes: number}) => {
-    const {hours, minutes} = values;
-    setHours(hours);
-    setMinutes(minutes);
+const YourApp = () => {
+  const [hours, setHours] = React.useState(0);
+  const [minutes, setMinutes] = React.useState(0);
+  const handleChange = (value: {hours: number; minutes: number}) => {
+    setHours(value.hours);
+    setMinutes(value.minutes);
+  };
+  const handleReset = () => {
+    setHours(0);
+    setMinutes(0);
   };
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <TimePicker value={{hours, minutes}} onChange={handleChange} />
-      </SafeAreaView>
-    </>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>
+        {hours} : {minutes}
+      </Text>
+      <Button title="RESET" onPress={handleReset} />
+      <TimePicker
+        textColor="red"
+        value={{hours, minutes}}
+        onChange={handleChange}
+      />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
-
-export default App;
+export default YourApp;
