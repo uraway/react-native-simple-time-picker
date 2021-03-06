@@ -17,6 +17,7 @@ export type TimePickerProps = {
   hoursUnit?: string;
   minutesUnit?: string;
   zeroPadding?: boolean;
+  textColor?: string;
 };
 
 export function TimePicker({
@@ -25,6 +26,7 @@ export function TimePicker({
   hoursUnit,
   minutesUnit,
   zeroPadding = false,
+  textColor,
 }: TimePickerProps) {
   const [internalHours, setInternalHours] = React.useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = React.useState(
@@ -45,7 +47,12 @@ export function TimePicker({
     const items: React.ReactElement[] = [];
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={getLabel(i, hoursUnit)} />,
+        <Picker.Item
+          key={i}
+          value={i}
+          label={getLabel(i, hoursUnit)}
+          color={textColor}
+        />,
       );
     }
     return items;
@@ -55,7 +62,12 @@ export function TimePicker({
     const items: React.ReactElement[] = [];
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
-        <Picker.Item key={i} value={i} label={getLabel(i, minutesUnit)} />,
+        <Picker.Item
+          key={i}
+          value={i}
+          label={getLabel(i, minutesUnit)}
+          color={textColor}
+        />,
       );
     }
     return items;
