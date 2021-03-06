@@ -29,7 +29,7 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn install && cd sample && yarn install
+      - run: yarn install
 
       - run: yarn eslint
 
