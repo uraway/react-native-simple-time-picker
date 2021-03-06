@@ -1,10 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import { zeroPad } from './utils/zeroPad';
+import * as React from 'react';
+import {StyleSheet, View} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
+import {zeroPad} from './utils/zeroPad';
 
 const MAX_HOURS = 23;
 const MAX_MINUTES = 59;
+
+export type ValueMap = {
+  hours: number;
+  minutes: number;
+};
+
+export type TimePickerProps = {
+  value?: ValueMap;
+  onChange?: ({hours, minutes}: ValueMap) => void;
+  hoursUnit?: string;
+  minutesUnit?: string;
+  zeroPadding?: boolean;
+};
 
 export function TimePicker({
   value,
@@ -12,13 +25,15 @@ export function TimePicker({
   hoursUnit,
   minutesUnit,
   zeroPadding = false,
-}) {
-  const [internalHours, setInternalHours] = useState(value?.hours ?? 0);
-  const [internalMinutes, setInternalMinutes] = useState(value?.minutes ?? 0);
+}: TimePickerProps) {
+  const [internalHours, setInternalHours] = React.useState(value?.hours ?? 0);
+  const [internalMinutes, setInternalMinutes] = React.useState(
+    value?.minutes ?? 0,
+  );
 
-  useEffect(() => {
-    setInternalHours(value?.hours);
-    setInternalMinutes(value?.minutes);
+  React.useEffect(() => {
+    setInternalHours(value?.hours ?? 0);
+    setInternalMinutes(value?.minutes ?? 0);
   }, [value]);
 
   const getLabel = (i, unit) => {
@@ -27,7 +42,7 @@ export function TimePicker({
   };
 
   const getHoursItems = () => {
-    const items = [];
+    const items: React.ReactElement[] = [];
     for (let i = 0; i <= MAX_HOURS; i++) {
       items.push(
         <Picker.Item key={i} value={i} label={getLabel(i, hoursUnit)} />,
@@ -37,7 +52,7 @@ export function TimePicker({
   };
 
   const getMinutesItems = () => {
-    const items = [];
+    const items: React.ReactElement[] = [];
     for (let i = 0; i <= MAX_MINUTES; i++) {
       items.push(
         <Picker.Item key={i} value={i} label={getLabel(i, minutesUnit)} />,
@@ -46,7 +61,7 @@ export function TimePicker({
     return items;
   };
 
-  const handleChangeHours = hours => {
+  const handleChangeHours = (hours) => {
     setInternalHours(hours);
     const newValue = {
       minutes: internalMinutes,
@@ -55,7 +70,7 @@ export function TimePicker({
     onChange?.(newValue);
   };
 
-  const handleChangeMinutes = minutes => {
+  const handleChangeMinutes = (minutes) => {
     setInternalMinutes(minutes);
     const newValue = {
       minutes,
@@ -69,15 +84,13 @@ export function TimePicker({
       <Picker
         style={styles.picker}
         selectedValue={internalHours}
-        onValueChange={itemValue => handleChangeHours(itemValue)}
-      >
+        onValueChange={(itemValue) => handleChangeHours(itemValue)}>
         {getHoursItems()}
       </Picker>
       <Picker
         style={styles.picker}
         selectedValue={internalMinutes}
-        onValueChange={itemValue => handleChangeMinutes(itemValue)}
-      >
+        onValueChange={(itemValue) => handleChangeMinutes(itemValue)}>
         {getMinutesItems()}
       </Picker>
     </View>

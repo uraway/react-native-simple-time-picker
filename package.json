@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-time-picker",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": false,
   "license": "MIT",
   "author": {
@@ -23,24 +23,27 @@
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "eslint": "^7.18.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-native": "^0.63.4",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "@react-native-community/eslint-config": "^1.1.0"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "files": [
+    "sample/lib"
+  ],
+  "main": "sample/lib/index.js",
+  "types": "sample/lib/index.d.ts",
   "scripts": {
-    "lint": "yarn eslint"
+    "eslint": "eslint 'src/*{js,tsx}'",
+    "eslint:fix": "eslint --fix 'src/*{js,tsx}'",
+    "prettier": "prettier -c 'src/*.{js,tsx}'",
+    "prettier:fix": "prettier -w 'src/*.{js,tsx}'",
+    "build": "tsc",
+    "ios": "cd sample && react-native run-ios",
+    "prepublish": "yarn build"
   },
   "jest": {
     "preset": "jest-expo"
