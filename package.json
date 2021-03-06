@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-time-picker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "license": "MIT",
   "author": {
@@ -44,6 +44,7 @@
     "build": "tsc",
     "ios": "cd sample && react-native run-ios",
     "prepublish": "yarn build",
+    "start": "cd sample && yarn start",
     "test": "cd sample && yarn test"
   },
   "jest": {

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {View, StyleSheet, StyleProp, TextStyle} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import {zeroPad} from './utils/zeroPad';
 
@@ -18,6 +19,7 @@ export type TimePickerProps = {
   minutesUnit?: string;
   zeroPadding?: boolean;
   textColor?: string;
+  itemStyle?: StyleProp<TextStyle>;
 };
 
 export function TimePicker({
@@ -27,6 +29,7 @@ export function TimePicker({
   minutesUnit,
   zeroPadding = false,
   textColor,
+  itemStyle,
 }: TimePickerProps) {
   const [internalHours, setInternalHours] = React.useState(value?.hours ?? 0);
   const [internalMinutes, setInternalMinutes] = React.useState(
@@ -97,6 +100,7 @@ export function TimePicker({
     <View style={styles.container}>
       <Picker
         testID="hoursPicker"
+        itemStyle={itemStyle}
         style={styles.picker}
         selectedValue={internalHours}
         onValueChange={(itemValue) => handleChangeHours(itemValue)}>
@@ -104,6 +108,7 @@ export function TimePicker({
       </Picker>
       <Picker
         testID="minutesPicker"
+        itemStyle={itemStyle}
         style={styles.picker}
         selectedValue={internalMinutes}
         onValueChange={(itemValue) => handleChangeMinutes(itemValue)}>
