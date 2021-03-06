@@ -536,5 +536,377 @@ exports[`ReactNativeSimpleTimePicker should render 1`] = `
       value={59}
     />
   </Picker>
+  <Picker
+    mode="dialog"
+    onValueChange={[Function]}
+    selectedValue={0}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    testID="secondsPicker"
+  >
+    <PickerItem
+      key="0"
+      label="0 "
+      testID="secondsItem"
+      value={0}
+    />
+    <PickerItem
+      key="1"
+      label="1 "
+      testID="secondsItem"
+      value={1}
+    />
+    <PickerItem
+      key="2"
+      label="2 "
+      testID="secondsItem"
+      value={2}
+    />
+    <PickerItem
+      key="3"
+      label="3 "
+      testID="secondsItem"
+      value={3}
+    />
+    <PickerItem
+      key="4"
+      label="4 "
+      testID="secondsItem"
+      value={4}
+    />
+    <PickerItem
+      key="5"
+      label="5 "
+      testID="secondsItem"
+      value={5}
+    />
+    <PickerItem
+      key="6"
+      label="6 "
+      testID="secondsItem"
+      value={6}
+    />
+    <PickerItem
+      key="7"
+      label="7 "
+      testID="secondsItem"
+      value={7}
+    />
+    <PickerItem
+      key="8"
+      label="8 "
+      testID="secondsItem"
+      value={8}
+    />
+    <PickerItem
+      key="9"
+      label="9 "
+      testID="secondsItem"
+      value={9}
+    />
+    <PickerItem
+      key="10"
+      label="10 "
+      testID="secondsItem"
+      value={10}
+    />
+    <PickerItem
+      key="11"
+      label="11 "
+      testID="secondsItem"
+      value={11}
+    />
+    <PickerItem
+      key="12"
+      label="12 "
+      testID="secondsItem"
+      value={12}
+    />
+    <PickerItem
+      key="13"
+      label="13 "
+      testID="secondsItem"
+      value={13}
+    />
+    <PickerItem
+      key="14"
+      label="14 "
+      testID="secondsItem"
+      value={14}
+    />
+    <PickerItem
+      key="15"
+      label="15 "
+      testID="secondsItem"
+      value={15}
+    />
+    <PickerItem
+      key="16"
+      label="16 "
+      testID="secondsItem"
+      value={16}
+    />
+    <PickerItem
+      key="17"
+      label="17 "
+      testID="secondsItem"
+      value={17}
+    />
+    <PickerItem
+      key="18"
+      label="18 "
+      testID="secondsItem"
+      value={18}
+    />
+    <PickerItem
+      key="19"
+      label="19 "
+      testID="secondsItem"
+      value={19}
+    />
+    <PickerItem
+      key="20"
+      label="20 "
+      testID="secondsItem"
+      value={20}
+    />
+    <PickerItem
+      key="21"
+      label="21 "
+      testID="secondsItem"
+      value={21}
+    />
+    <PickerItem
+      key="22"
+      label="22 "
+      testID="secondsItem"
+      value={22}
+    />
+    <PickerItem
+      key="23"
+      label="23 "
+      testID="secondsItem"
+      value={23}
+    />
+    <PickerItem
+      key="24"
+      label="24 "
+      testID="secondsItem"
+      value={24}
+    />
+    <PickerItem
+      key="25"
+      label="25 "
+      testID="secondsItem"
+      value={25}
+    />
+    <PickerItem
+      key="26"
+      label="26 "
+      testID="secondsItem"
+      value={26}
+    />
+    <PickerItem
+      key="27"
+      label="27 "
+      testID="secondsItem"
+      value={27}
+    />
+    <PickerItem
+      key="28"
+      label="28 "
+      testID="secondsItem"
+      value={28}
+    />
+    <PickerItem
+      key="29"
+      label="29 "
+      testID="secondsItem"
+      value={29}
+    />
+    <PickerItem
+      key="30"
+      label="30 "
+      testID="secondsItem"
+      value={30}
+    />
+    <PickerItem
+      key="31"
+      label="31 "
+      testID="secondsItem"
+      value={31}
+    />
+    <PickerItem
+      key="32"
+      label="32 "
+      testID="secondsItem"
+      value={32}
+    />
+    <PickerItem
+      key="33"
+      label="33 "
+      testID="secondsItem"
+      value={33}
+    />
+    <PickerItem
+      key="34"
+      label="34 "
+      testID="secondsItem"
+      value={34}
+    />
+    <PickerItem
+      key="35"
+      label="35 "
+      testID="secondsItem"
+      value={35}
+    />
+    <PickerItem
+      key="36"
+      label="36 "
+      testID="secondsItem"
+      value={36}
+    />
+    <PickerItem
+      key="37"
+      label="37 "
+      testID="secondsItem"
+      value={37}
+    />
+    <PickerItem
+      key="38"
+      label="38 "
+      testID="secondsItem"
+      value={38}
+    />
+    <PickerItem
+      key="39"
+      label="39 "
+      testID="secondsItem"
+      value={39}
+    />
+    <PickerItem
+      key="40"
+      label="40 "
+      testID="secondsItem"
+      value={40}
+    />
+    <PickerItem
+      key="41"
+      label="41 "
+      testID="secondsItem"
+      value={41}
+    />
+    <PickerItem
+      key="42"
+      label="42 "
+      testID="secondsItem"
+      value={42}
+    />
+    <PickerItem
+      key="43"
+      label="43 "
+      testID="secondsItem"
+      value={43}
+    />
+    <PickerItem
+      key="44"
+      label="44 "
+      testID="secondsItem"
+      value={44}
+    />
+    <PickerItem
+      key="45"
+      label="45 "
+      testID="secondsItem"
+      value={45}
+    />
+    <PickerItem
+      key="46"
+      label="46 "
+      testID="secondsItem"
+      value={46}
+    />
+    <PickerItem
+      key="47"
+      label="47 "
+      testID="secondsItem"
+      value={47}
+    />
+    <PickerItem
+      key="48"
+      label="48 "
+      testID="secondsItem"
+      value={48}
+    />
+    <PickerItem
+      key="49"
+      label="49 "
+      testID="secondsItem"
+      value={49}
+    />
+    <PickerItem
+      key="50"
+      label="50 "
+      testID="secondsItem"
+      value={50}
+    />
+    <PickerItem
+      key="51"
+      label="51 "
+      testID="secondsItem"
+      value={51}
+    />
+    <PickerItem
+      key="52"
+      label="52 "
+      testID="secondsItem"
+      value={52}
+    />
+    <PickerItem
+      key="53"
+      label="53 "
+      testID="secondsItem"
+      value={53}
+    />
+    <PickerItem
+      key="54"
+      label="54 "
+      testID="secondsItem"
+      value={54}
+    />
+    <PickerItem
+      key="55"
+      label="55 "
+      testID="secondsItem"
+      value={55}
+    />
+    <PickerItem
+      key="56"
+      label="56 "
+      testID="secondsItem"
+      value={56}
+    />
+    <PickerItem
+      key="57"
+      label="57 "
+      testID="secondsItem"
+      value={57}
+    />
+    <PickerItem
+      key="58"
+      label="58 "
+      testID="secondsItem"
+      value={58}
+    />
+    <PickerItem
+      key="59"
+      label="59 "
+      testID="secondsItem"
+      value={59}
+    />
+  </Picker>
 </View>
 `;
