@@ -34,6 +34,7 @@ export function TimePicker({
   onChange,
   hoursUnit,
   minutesUnit,
+  secondsUnit,
   zeroPadding = false,
   textColor,
   hoursInterval = 1,
@@ -66,7 +67,7 @@ export function TimePicker({
     setInternalSeconds(value?.seconds ?? 0);
   }, [value]);
 
-  const getLabel = (i, unit) => {
+  const getLabel = (i: number, unit?: string) => {
     const numString = zeroPadding ? zeroPad(i) : i.toString();
     return `${numString} ${unit ?? ''}`;
   };
@@ -123,7 +124,7 @@ export function TimePicker({
           testID="secondsItem"
           key={i}
           value={i}
-          label={getLabel(i, minutesUnit)}
+          label={getLabel(i, secondsUnit)}
           color={textColor}
         />,
       );
