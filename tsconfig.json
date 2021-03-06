@@ -27,6 +27,6 @@
     "node_modules",
     "babel.config.js",
     "metro.config.js",
-    "sample/jest.config.js"
+    "jest.config.js"
   ]
 }

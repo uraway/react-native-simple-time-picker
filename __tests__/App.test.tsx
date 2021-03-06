@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import {TimePicker, zeroPad} from '../lib';
+import {TimePicker, zeroPad} from '../src';
 
 describe('ReactNativeSimpleTimePicker', () => {
   it('should render', () => {
