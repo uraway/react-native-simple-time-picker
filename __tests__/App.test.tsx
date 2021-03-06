@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import {TimePicker, zeroPad} from '../src';
+import {TimePicker} from '../src';
 
 describe('ReactNativeSimpleTimePicker', () => {
   it('should render', () => {
@@ -64,20 +64,25 @@ describe('ReactNativeSimpleTimePicker', () => {
     ).toThrowError();
   });
 
-  it('should render units', () => {
+  it('should render label with units', () => {
     const wrapper = shallow<typeof TimePicker>(
-      <TimePicker hoursUnit="h" minutesUnit="m" secondsUnit="s" />,
+      <TimePicker
+        hoursUnit="h"
+        minutesUnit="m"
+        secondsUnit="s"
+        pickerShows={['hours', 'minutes', 'seconds']}
+      />,
     );
 
-    wrapper.find({testID: 'hoursItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${index} h`);
-    });
-    wrapper.find({testID: 'minutesItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${index} m`);
-    });
-    wrapper.find({testID: 'secondsItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${index} s`);
-    });
+    expect(wrapper.find({testID: 'hoursItem'}).first().props().label).toBe(
+      '0 h',
+    );
+    expect(wrapper.find({testID: 'minutesItem'}).first().props().label).toBe(
+      '0 m',
+    );
+    expect(wrapper.find({testID: 'secondsItem'}).first().props().label).toBe(
+      '0 s',
+    );
   });
 
   it('should update state', async () => {
@@ -100,16 +105,18 @@ describe('ReactNativeSimpleTimePicker', () => {
   });
 
   it('should render with zeroPadding', () => {
-    const wrapper = shallow<typeof TimePicker>(<TimePicker zeroPadding />);
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker zeroPadding pickerShows={['hours', 'minutes', 'seconds']} />,
+    );
 
-    wrapper.find({testID: 'hoursItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${zeroPad(index)} `);
-    });
-    wrapper.find({testID: 'minutesItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${zeroPad(index)} `);
-    });
-    wrapper.find({testID: 'secondsItem'}).forEach((node, index) => {
-      expect(node.props().label).toBe(`${zeroPad(index)} `);
-    });
+    expect(wrapper.find({testID: 'hoursItem'}).first().props().label).toBe(
+      '00 ',
+    );
+    expect(wrapper.find({testID: 'minutesItem'}).first().props().label).toBe(
+      '00 ',
+    );
+    expect(wrapper.find({testID: 'secondsItem'}).first().props().label).toBe(
+      '00 ',
+    );
   });
 });
