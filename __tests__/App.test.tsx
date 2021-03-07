@@ -36,6 +36,18 @@ describe('ReactNativeSimpleTimePicker', () => {
     expect(wrapper.find({testID: 'secondsPicker'}).isEmptyRender()).toBe(false);
   });
 
+  it('should render pickers with pickerProps e.g. enabled', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker
+        pickerShows={['hours', 'minutes', 'seconds']}
+        enabled={false}
+      />,
+    );
+    expect(wrapper.find({testID: 'hoursPicker'}).props().enabled).toBe(false);
+    expect(wrapper.find({testID: 'minutesPicker'}).props().enabled).toBe(false);
+    expect(wrapper.find({testID: 'secondsPicker'}).props().enabled).toBe(false);
+  });
+
   it('should render all hours, minutes and seconds items with interval props', () => {
     const wrapper = shallow<typeof TimePicker>(
       <TimePicker
