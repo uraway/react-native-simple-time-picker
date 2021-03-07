@@ -169,7 +169,8 @@ export function TimePicker({
           testID="hoursPicker"
           style={styles.picker}
           selectedValue={internalHours}
-          onValueChange={(itemValue) => handleChangeHours(itemValue)}>
+          onValueChange={(itemValue) => handleChangeHours(itemValue)}
+          {...others}>
           {getHoursItems()}
         </Picker>
       )}
