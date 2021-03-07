@@ -1,11 +1,9 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {PickerProps} from '@react-native-picker/picker/typings/Picker';
 import {Picker} from '@react-native-picker/picker';
 import {zeroPad} from './utils/zeroPad';
 
-const MAX_HOURS = 23;
 const MAX_MINUTES = 59;
 const MAX_SECONDS = 59;
 
@@ -13,11 +11,12 @@ export type ValueMap = {
   hours: number;
   minutes: number;
   seconds: number;
+  ampm?: 'am' | 'pm';
 };
 
 export interface TimePickerProps extends PickerProps {
   value?: Partial<ValueMap>;
-  onChange?: ({hours, minutes, seconds}: ValueMap) => void;
+  onChange?: (newValue: ValueMap) => void;
   hoursUnit?: string;
   minutesUnit?: string;
   secondsUnit?: string;
@@ -27,6 +26,12 @@ export interface TimePickerProps extends PickerProps {
   minutesInterval?: number;
   secondsInterval?: number;
   pickerShows?: Array<'hours' | 'minutes' | 'seconds'>;
+  emptyLabel?: string;
+  isAmpm?: boolean;
+  ampmLocalization?: {
+    am: string;
+    pm: string;
+  };
 }
 
 export function TimePicker({
@@ -41,8 +46,20 @@ export function TimePicker({
   minutesInterval = 1,
   secondsInterval = 1,
   pickerShows = ['hours', 'minutes'],
+  emptyLabel,
+  isAmpm,
+  ampmLocalization = {
+    am: 'am',
+    pm: 'pm',
+  },
   ...others
 }: TimePickerProps) {
+  let MAX_HOURS = 23;
+
+  if (isAmpm) {
+    MAX_HOURS = MAX_HOURS / 2;
+  }
+
   if (
     hoursInterval > MAX_HOURS ||
     minutesInterval > MAX_MINUTES ||
@@ -60,11 +77,15 @@ export function TimePicker({
   const [internalSeconds, setInternalSeconds] = React.useState(
     value?.minutes ?? 0,
   );
+  const [internalAmpm, setInternalAmpm] = React.useState(
+    isAmpm ? value?.ampm : undefined,
+  );
 
   React.useEffect(() => {
     setInternalHours(value?.hours ?? 0);
     setInternalMinutes(value?.minutes ?? 0);
     setInternalSeconds(value?.seconds ?? 0);
+    setInternalAmpm(value?.ampm ?? undefined);
   }, [value]);
 
   const getLabel = (i: number, unit?: string) => {
@@ -76,6 +97,18 @@ export function TimePicker({
     const items: React.ReactElement[] = [];
     if (!pickerShows.includes('hours')) {
       return items;
+    }
+
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="hoursItem"
+          key="nullHoursItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
     }
 
     for (let i = 0; i <= MAX_HOURS; i += hoursInterval) {
@@ -98,6 +131,18 @@ export function TimePicker({
       return items;
     }
 
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="minutesItem"
+          key="nullMinutesItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
+    }
+
     for (let i = 0; i <= MAX_MINUTES; i += minutesInterval) {
       items.push(
         <Picker.Item
@@ -116,6 +161,18 @@ export function TimePicker({
     const items: React.ReactElement[] = [];
     if (!pickerShows.includes('seconds')) {
       return items;
+    }
+
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="secondsItem"
+          key="nullSecondsItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
     }
 
     for (let i = 0; i <= MAX_SECONDS; i += secondsInterval) {
@@ -138,6 +195,7 @@ export function TimePicker({
       hours,
       minutes: internalMinutes,
       seconds: internalSeconds,
+      ampm: internalAmpm,
     };
     onChange?.(newValue);
   };
@@ -148,6 +206,7 @@ export function TimePicker({
       hours: internalHours,
       minutes,
       seconds: internalSeconds,
+      ampm: internalAmpm,
     };
     onChange?.(newValue);
   };
@@ -158,6 +217,18 @@ export function TimePicker({
       hours: internalHours,
       minutes: internalMinutes,
       seconds,
+      ampm: internalAmpm,
+    };
+    onChange?.(newValue);
+  };
+
+  const handleChangeAmpm = (ampmValue) => {
+    setInternalAmpm(ampmValue);
+    const newValue = {
+      hours: internalHours,
+      minutes: internalMinutes,
+      seconds: internalSeconds,
+      ampm: ampmValue,
     };
     onChange?.(newValue);
   };
@@ -194,6 +265,28 @@ export function TimePicker({
           onValueChange={(itemValue) => handleChangeSeconds(itemValue)}
           {...others}>
           {getSecondsItems()}
+        </Picker>
+      )}
+
+      {isAmpm && (
+        <Picker
+          testID="ampmPicker"
+          style={styles.picker}
+          selectedValue={internalAmpm}
+          onValueChange={(itemValue) => handleChangeAmpm(itemValue)}
+          {...others}>
+          <Picker.Item
+            testID="amItem"
+            value="am"
+            label={ampmLocalization.am}
+            color={textColor}
+          />
+          <Picker.Item
+            testID="pmItem"
+            value="pm"
+            label={ampmLocalization.pm}
+            color={textColor}
+          />
         </Picker>
       )}
     </View>
