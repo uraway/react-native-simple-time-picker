@@ -1,4 +1,6 @@
-![](https://i.imgur.com/z47iHvd.png)
+| iOS                                                                                                                               | Android                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| <image src="https://user-images.githubusercontent.com/15242484/110229867-e53c2480-7f4f-11eb-8afd-85e079063dff.png" width="300" /> | <image src="https://user-images.githubusercontent.com/15242484/110229829-955d5d80-7f4f-11eb-9153-f9a1d0c04ef3.png" width="300" /> |
 
 ## Install
 
@@ -36,13 +38,15 @@ const YourApp = () => {
 | --------------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
 | value           | { minutes: number, hours: number } | { minutes: 0, hours: 0 } |                                                                                              |
 | onChange        | Function                           |                          | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
+| pickerShows     | Array                              | `["hours", "minutes"]`   | Pickers to display (`e.g. ["hours", "minutes", "seconds"]`)                                  |
 | hoursUnit       | String                             | ''                       | Hours Unit for label                                                                         |
 | minutesUnit     | String                             | ''                       | Minutes Unit for label                                                                       |
+| secondsUnit     | String                             | ''                       | Seconds Unit for label                                                                       |
 | zeroPadding     | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
 | textColor       | String                             |                          | Color of the picker item's text                                                              |
 | hoursInterval   | Integer                            | 1                        |                                                                                              |
 | minutesInterval | Integer                            | 1                        |                                                                                              |
-| pickerShows     | Array                              | `["hours", "minutes"]`   | Pickers to display (`e.g. ["hours", "minutes", "seconds"]`)                                  |
+| secondsInterval | Integer                            | 1                        |                                                                                              |
 
 ## Preview
 
