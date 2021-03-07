@@ -48,6 +48,46 @@ describe('ReactNativeSimpleTimePicker', () => {
     expect(wrapper.find({testID: 'secondsPicker'}).props().enabled).toBe(false);
   });
 
+  it('should render empty slot with emptyLabel empty string', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker
+        pickerShows={['hours', 'minutes', 'seconds']}
+        emptyLabel=""
+      />,
+    );
+    expect(wrapper.find({testID: 'hoursItem'}).length).toBe(25);
+    expect(wrapper.find({testID: 'hoursItem'}).first().props().label).toBe('');
+    expect(wrapper.find({testID: 'minutesItem'}).length).toBe(61);
+    expect(wrapper.find({testID: 'minutesItem'}).first().props().label).toBe(
+      '',
+    );
+    expect(wrapper.find({testID: 'secondsItem'}).length).toBe(61);
+    expect(wrapper.find({testID: 'secondsItem'}).first().props().label).toBe(
+      '',
+    );
+  });
+
+  it('should not render empty slot with emptyLabel undefined', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker
+        pickerShows={['hours', 'minutes', 'seconds']}
+        emptyLabel={undefined}
+      />,
+    );
+    expect(wrapper.find({testID: 'hoursItem'}).length).toBe(24);
+    expect(wrapper.find({testID: 'hoursItem'}).first().props().label).toBe(
+      '0 ',
+    );
+    expect(wrapper.find({testID: 'minutesItem'}).length).toBe(60);
+    expect(wrapper.find({testID: 'minutesItem'}).first().props().label).toBe(
+      '0 ',
+    );
+    expect(wrapper.find({testID: 'secondsItem'}).length).toBe(60);
+    expect(wrapper.find({testID: 'secondsItem'}).first().props().label).toBe(
+      '0 ',
+    );
+  });
+
   it('should render all hours, minutes and seconds items with interval props', () => {
     const wrapper = shallow<typeof TimePicker>(
       <TimePicker

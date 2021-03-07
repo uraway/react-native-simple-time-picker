@@ -27,6 +27,7 @@ export interface TimePickerProps extends PickerProps {
   minutesInterval?: number;
   secondsInterval?: number;
   pickerShows?: Array<'hours' | 'minutes' | 'seconds'>;
+  emptyLabel?: string;
 }
 
 export function TimePicker({
@@ -41,6 +42,7 @@ export function TimePicker({
   minutesInterval = 1,
   secondsInterval = 1,
   pickerShows = ['hours', 'minutes'],
+  emptyLabel,
   ...others
 }: TimePickerProps) {
   if (
@@ -78,6 +80,18 @@ export function TimePicker({
       return items;
     }
 
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="hoursItem"
+          key="nullHoursItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
+    }
+
     for (let i = 0; i <= MAX_HOURS; i += hoursInterval) {
       items.push(
         <Picker.Item
@@ -98,6 +112,18 @@ export function TimePicker({
       return items;
     }
 
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="minutesItem"
+          key="nullMinutesItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
+    }
+
     for (let i = 0; i <= MAX_MINUTES; i += minutesInterval) {
       items.push(
         <Picker.Item
@@ -116,6 +142,18 @@ export function TimePicker({
     const items: React.ReactElement[] = [];
     if (!pickerShows.includes('seconds')) {
       return items;
+    }
+
+    if (emptyLabel != null) {
+      items.push(
+        <Picker.Item
+          testID="secondsItem"
+          key="nullSecondsItem"
+          value=""
+          label={emptyLabel}
+          color={textColor}
+        />,
+      );
     }
 
     for (let i = 0; i <= MAX_SECONDS; i += secondsInterval) {

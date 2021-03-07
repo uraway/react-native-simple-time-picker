@@ -47,6 +47,7 @@ const YourApp = () => {
 | hoursInterval   | Integer                            | 1                        |                                                                                              |
 | minutesInterval | Integer                            | 1                        |                                                                                              |
 | secondsInterval | Integer                            | 1                        |                                                                                              |
+| emptyLabel      | String                             | undefined                | Enable empty option with this label                                                          |
 
 ## Preview
 
