@@ -25,6 +25,7 @@ describe('ReactNativeSimpleTimePicker', () => {
     expect(wrapper.find({testID: 'hoursPicker'}).isEmptyRender()).toBe(false);
     expect(wrapper.find({testID: 'minutesPicker'}).isEmptyRender()).toBe(false);
     expect(wrapper.find({testID: 'secondsPicker'}).isEmptyRender()).toBe(true);
+    expect(wrapper.find({testID: 'ampmPicker'}).isEmptyRender()).toBe(true);
   });
 
   it('should render pickers with pickerShows prop', () => {
@@ -170,5 +171,40 @@ describe('ReactNativeSimpleTimePicker', () => {
     expect(wrapper.find({testID: 'secondsItem'}).first().props().label).toBe(
       '00 ',
     );
+  });
+
+  it('should render pickers with isAmpm', () => {
+    const wrapper = shallow<typeof TimePicker>(<TimePicker isAmpm />);
+    expect(wrapper.find({testID: 'hoursPicker'}).isEmptyRender()).toBe(false);
+    expect(wrapper.find({testID: 'minutesPicker'}).isEmptyRender()).toBe(false);
+    expect(wrapper.find({testID: 'ampmPicker'}).isEmptyRender()).toBe(false);
+
+    expect(wrapper.find({testID: 'hoursItem'}).length).toBe(12);
+    expect(wrapper.find({testID: 'minutesItem'}).length).toBe(60);
+
+    wrapper.find({testID: 'ampmPicker'}).props().onValueChange('pm', 'pm');
+    expect(wrapper.find({testID: 'ampmPicker'}).props().selectedValue).toBe(
+      'pm',
+    );
+
+    expect(wrapper.find({testID: 'amItem'}).props().label).toBe('am');
+    expect(wrapper.find({testID: 'pmItem'}).props().label).toBe('pm');
+  });
+
+  it('should render pickers with isAmpm & ampmLocalization', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker isAmpm ampmLocalization={{am: '午前', pm: '午後'}} />,
+    );
+    expect(wrapper.find({testID: 'hoursPicker'}).isEmptyRender()).toBe(false);
+    expect(wrapper.find({testID: 'minutesPicker'}).isEmptyRender()).toBe(false);
+    expect(wrapper.find({testID: 'ampmPicker'}).isEmptyRender()).toBe(false);
+
+    wrapper.find({testID: 'ampmPicker'}).props().onValueChange('pm', '午後');
+    expect(wrapper.find({testID: 'ampmPicker'}).props().selectedValue).toBe(
+      'pm',
+    );
+
+    expect(wrapper.find({testID: 'amItem'}).props().label).toBe('午前');
+    expect(wrapper.find({testID: 'pmItem'}).props().label).toBe('午後');
   });
 });
