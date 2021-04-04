@@ -17,8 +17,8 @@
     "react-native": ">=0.57"
   },
   "devDependencies": {
-    "@babel/core": "7.13.8",
-    "@babel/runtime": "7.12.5",
+    "@babel/core": "7.13.14",
+    "@babel/runtime": "7.13.10",
     "@react-native-community/eslint-config": "1.1.0",
     "@react-native-picker/picker": "1.14.0",
     "@types/enzyme": "3.10.8",
