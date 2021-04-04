@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@react-native-picker/picker": "^1.9.11",
+    "@react-native-picker/picker": "1.9.11",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-simple-time-picker": "1.2.2"
