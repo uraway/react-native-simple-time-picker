@@ -22,7 +22,7 @@
     "@react-native-community/eslint-config": "1.1.0",
     "@react-native-picker/picker": "1.14.0",
     "@types/enzyme": "3.10.8",
-    "@types/jest": "25.2.3",
+    "@types/jest": "26.0.22",
     "@types/react": "17.0.0",
     "@types/react-native": "0.64.2",
     "@types/react-test-renderer": "17.0.1",
