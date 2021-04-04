@@ -43,7 +43,7 @@
     "react-dom": "16.14.0",
     "react-native": "0.64.0",
     "react-test-renderer": "16.14.0",
-    "typescript": "4.1.3"
+    "typescript": "4.2.3"
   },
   "files": [
     "sample/lib"
