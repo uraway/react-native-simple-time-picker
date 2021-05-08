@@ -23,7 +23,7 @@
     "@react-native-picker/picker": "1.15.0",
     "@types/enzyme": "3.10.8",
     "@types/jest": "26.0.23",
-    "@types/react": "17.0.4",
+    "@types/react": "17.0.5",
     "@types/react-native": "0.64.5",
     "@types/react-test-renderer": "17.0.1",
     "@typescript-eslint/eslint-plugin": "4.22.0",
