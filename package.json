@@ -20,7 +20,7 @@
     "@babel/core": "7.14.2",
     "@babel/runtime": "7.14.0",
     "@react-native-community/eslint-config": "2.0.0",
-    "@react-native-picker/picker": "1.15.0",
+    "@react-native-picker/picker": "1.16.0",
     "@types/enzyme": "3.10.8",
     "@types/jest": "26.0.23",
     "@types/react": "17.0.5",
