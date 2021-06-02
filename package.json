@@ -24,7 +24,7 @@
     "@types/enzyme": "3.10.8",
     "@types/jest": "26.0.23",
     "@types/react": "17.0.9",
-    "@types/react-native": "0.64.8",
+    "@types/react-native": "0.64.9",
     "@types/react-test-renderer": "17.0.1",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.26.0",
