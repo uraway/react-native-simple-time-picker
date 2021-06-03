@@ -58,6 +58,7 @@
     "prettier:fix": "prettier -w 'src/*.{js,tsx}'",
     "build": "tsc",
     "ios": "cd sample && react-native run-ios",
+    "android": "cd sample && react-native run-android",
     "prepublish": "yarn build",
     "start": "cd sample && yarn start",
     "test": "jest"
