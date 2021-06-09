@@ -1,6 +1,7 @@
-| iOS                                                                                                                               | Android                                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <image src="https://user-images.githubusercontent.com/15242484/110229867-e53c2480-7f4f-11eb-8afd-85e079063dff.png" width="300" /> | <image src="https://user-images.githubusercontent.com/15242484/110229829-955d5d80-7f4f-11eb-9153-f9a1d0c04ef3.png" width="300" /> |
+<!-- prettier-ignore -->
+| iOS | Android |
+| --- | --- |
+| <image src="./screenshots/iOS.png" width="300" /> | <image src="./screenshots/Android.png" width="300" /> |
 
 ## Install
 
