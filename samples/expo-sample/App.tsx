@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Text, View, Button, StyleSheet} from 'react-native';
+import {TimePicker} from 'react-native-simple-time-picker';
 
-export default function App() {
+const YourApp = () => {
+  const [hours, setHours] = React.useState(0);
+  const [minutes, setMinutes] = React.useState(0);
+  const handleChange = (value: {hours: number; minutes: number}) => {
+    setHours(value.hours);
+    setMinutes(value.minutes);
+  };
+  const handleReset = () => {
+    setHours(0);
+    setMinutes(0);
+  };
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>
+        {hours} : {minutes}
+      </Text>
+      <Button title="RESET" onPress={handleReset} />
+      <TimePicker
+        textColor="red"
+        value={{hours, minutes}}
+        onChange={handleChange}
+        itemStyle={styles.itemStyle}
+        hoursInterval={5}
+        minutesInterval={15}
+      />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemStyle: {
+    margin: 24,
   },
 });
+
+export default YourApp;
