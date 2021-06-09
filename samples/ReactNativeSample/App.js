@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, Button, StyleSheet} from 'react-native';
-import {TimePicker} from 'react-native-simple-time-picker';
+import {TimePicker} from './lib';
 
 const YourApp = () => {
   const [hours, setHours] = React.useState(0);

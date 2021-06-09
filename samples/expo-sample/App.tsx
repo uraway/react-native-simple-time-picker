@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, Button, StyleSheet} from 'react-native';
-import {TimePicker} from 'react-native-simple-time-picker';
+import {TimePicker} from './lib';
 
 const YourApp = () => {
   const [hours, setHours] = React.useState(0);
@@ -24,8 +24,7 @@ const YourApp = () => {
         value={{hours, minutes}}
         onChange={handleChange}
         itemStyle={styles.itemStyle}
-        hoursInterval={5}
-        minutesInterval={15}
+        isAmpm
       />
     </View>
   );
