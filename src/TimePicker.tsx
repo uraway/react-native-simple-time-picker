@@ -55,9 +55,11 @@ export function TimePicker({
   ...others
 }: TimePickerProps) {
   let MAX_HOURS = 23;
+  let MIN_HOURS = 0;
 
   if (isAmpm) {
-    MAX_HOURS = MAX_HOURS / 2;
+    MAX_HOURS = 12;
+    MIN_HOURS = 1;
   }
 
   if (
@@ -111,7 +113,7 @@ export function TimePicker({
       );
     }
 
-    for (let i = 0; i <= MAX_HOURS; i += hoursInterval) {
+    for (let i = MIN_HOURS; i <= MAX_HOURS; i += hoursInterval) {
       items.push(
         <Picker.Item
           testID="hoursItem"
