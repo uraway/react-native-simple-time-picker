@@ -12,11 +12,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "baseUrl": "./src",
-    "outDir": "./sample/lib",
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
+    "outDir": "./lib",
     "esModuleInterop": true,
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     "sourceMap": true /* Generates corresponding '.map' file. */
