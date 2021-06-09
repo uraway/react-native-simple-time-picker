@@ -5,7 +5,7 @@
     "lib": ["esnext"],
     "allowJs": true,
     "jsx": "react-native",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "incremental": true /* Enable incremental compilation */,
     "isolatedModules": true,
     "strict": true,

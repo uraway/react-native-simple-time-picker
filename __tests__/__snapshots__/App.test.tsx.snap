@@ -20,144 +20,168 @@ exports[`ReactNativeSimpleTimePicker should render 1`] = `
     testID="hoursPicker"
   >
     <PickerItem
+      color=""
       key="0"
       label="0 "
       testID="hoursItem"
       value={0}
     />
     <PickerItem
+      color=""
       key="1"
       label="1 "
       testID="hoursItem"
       value={1}
     />
     <PickerItem
+      color=""
       key="2"
       label="2 "
       testID="hoursItem"
       value={2}
     />
     <PickerItem
+      color=""
       key="3"
       label="3 "
       testID="hoursItem"
       value={3}
     />
     <PickerItem
+      color=""
       key="4"
       label="4 "
       testID="hoursItem"
       value={4}
     />
     <PickerItem
+      color=""
       key="5"
       label="5 "
       testID="hoursItem"
       value={5}
     />
     <PickerItem
+      color=""
       key="6"
       label="6 "
       testID="hoursItem"
       value={6}
     />
     <PickerItem
+      color=""
       key="7"
       label="7 "
       testID="hoursItem"
       value={7}
     />
     <PickerItem
+      color=""
       key="8"
       label="8 "
       testID="hoursItem"
       value={8}
     />
     <PickerItem
+      color=""
       key="9"
       label="9 "
       testID="hoursItem"
       value={9}
     />
     <PickerItem
+      color=""
       key="10"
       label="10 "
       testID="hoursItem"
       value={10}
     />
     <PickerItem
+      color=""
       key="11"
       label="11 "
       testID="hoursItem"
       value={11}
     />
     <PickerItem
+      color=""
       key="12"
       label="12 "
       testID="hoursItem"
       value={12}
     />
     <PickerItem
+      color=""
       key="13"
       label="13 "
       testID="hoursItem"
       value={13}
     />
     <PickerItem
+      color=""
       key="14"
       label="14 "
       testID="hoursItem"
       value={14}
     />
     <PickerItem
+      color=""
       key="15"
       label="15 "
       testID="hoursItem"
       value={15}
     />
     <PickerItem
+      color=""
       key="16"
       label="16 "
       testID="hoursItem"
       value={16}
     />
     <PickerItem
+      color=""
       key="17"
       label="17 "
       testID="hoursItem"
       value={17}
     />
     <PickerItem
+      color=""
       key="18"
       label="18 "
       testID="hoursItem"
       value={18}
     />
     <PickerItem
+      color=""
       key="19"
       label="19 "
       testID="hoursItem"
       value={19}
     />
     <PickerItem
+      color=""
       key="20"
       label="20 "
       testID="hoursItem"
       value={20}
     />
     <PickerItem
+      color=""
       key="21"
       label="21 "
       testID="hoursItem"
       value={21}
     />
     <PickerItem
+      color=""
       key="22"
       label="22 "
       testID="hoursItem"
       value={22}
     />
     <PickerItem
+      color=""
       key="23"
       label="23 "
       testID="hoursItem"
@@ -176,360 +200,420 @@ exports[`ReactNativeSimpleTimePicker should render 1`] = `
     testID="minutesPicker"
   >
     <PickerItem
+      color=""
       key="0"
       label="0 "
       testID="minutesItem"
       value={0}
     />
     <PickerItem
+      color=""
       key="1"
       label="1 "
       testID="minutesItem"
       value={1}
     />
     <PickerItem
+      color=""
       key="2"
       label="2 "
       testID="minutesItem"
       value={2}
     />
     <PickerItem
+      color=""
       key="3"
       label="3 "
       testID="minutesItem"
       value={3}
     />
     <PickerItem
+      color=""
       key="4"
       label="4 "
       testID="minutesItem"
       value={4}
     />
     <PickerItem
+      color=""
       key="5"
       label="5 "
       testID="minutesItem"
       value={5}
     />
     <PickerItem
+      color=""
       key="6"
       label="6 "
       testID="minutesItem"
       value={6}
     />
     <PickerItem
+      color=""
       key="7"
       label="7 "
       testID="minutesItem"
       value={7}
     />
     <PickerItem
+      color=""
       key="8"
       label="8 "
       testID="minutesItem"
       value={8}
     />
     <PickerItem
+      color=""
       key="9"
       label="9 "
       testID="minutesItem"
       value={9}
     />
     <PickerItem
+      color=""
       key="10"
       label="10 "
       testID="minutesItem"
       value={10}
     />
     <PickerItem
+      color=""
       key="11"
       label="11 "
       testID="minutesItem"
       value={11}
     />
     <PickerItem
+      color=""
       key="12"
       label="12 "
       testID="minutesItem"
       value={12}
     />
     <PickerItem
+      color=""
       key="13"
       label="13 "
       testID="minutesItem"
       value={13}
     />
     <PickerItem
+      color=""
       key="14"
       label="14 "
       testID="minutesItem"
       value={14}
     />
     <PickerItem
+      color=""
       key="15"
       label="15 "
       testID="minutesItem"
       value={15}
     />
     <PickerItem
+      color=""
       key="16"
       label="16 "
       testID="minutesItem"
       value={16}
     />
     <PickerItem
+      color=""
       key="17"
       label="17 "
       testID="minutesItem"
       value={17}
     />
     <PickerItem
+      color=""
       key="18"
       label="18 "
       testID="minutesItem"
       value={18}
     />
     <PickerItem
+      color=""
       key="19"
       label="19 "
       testID="minutesItem"
       value={19}
     />
     <PickerItem
+      color=""
       key="20"
       label="20 "
       testID="minutesItem"
       value={20}
     />
     <PickerItem
+      color=""
       key="21"
       label="21 "
       testID="minutesItem"
       value={21}
     />
     <PickerItem
+      color=""
       key="22"
       label="22 "
       testID="minutesItem"
       value={22}
     />
     <PickerItem
+      color=""
       key="23"
       label="23 "
       testID="minutesItem"
       value={23}
     />
     <PickerItem
+      color=""
       key="24"
       label="24 "
       testID="minutesItem"
       value={24}
     />
     <PickerItem
+      color=""
       key="25"
       label="25 "
       testID="minutesItem"
       value={25}
     />
     <PickerItem
+      color=""
       key="26"
       label="26 "
       testID="minutesItem"
       value={26}
     />
     <PickerItem
+      color=""
       key="27"
       label="27 "
       testID="minutesItem"
       value={27}
     />
     <PickerItem
+      color=""
       key="28"
       label="28 "
       testID="minutesItem"
       value={28}
     />
     <PickerItem
+      color=""
       key="29"
       label="29 "
       testID="minutesItem"
       value={29}
     />
     <PickerItem
+      color=""
       key="30"
       label="30 "
       testID="minutesItem"
       value={30}
     />
     <PickerItem
+      color=""
       key="31"
       label="31 "
       testID="minutesItem"
       value={31}
     />
     <PickerItem
+      color=""
       key="32"
       label="32 "
       testID="minutesItem"
       value={32}
     />
     <PickerItem
+      color=""
       key="33"
       label="33 "
       testID="minutesItem"
       value={33}
     />
     <PickerItem
+      color=""
       key="34"
       label="34 "
       testID="minutesItem"
       value={34}
     />
     <PickerItem
+      color=""
       key="35"
       label="35 "
       testID="minutesItem"
       value={35}
     />
     <PickerItem
+      color=""
       key="36"
       label="36 "
       testID="minutesItem"
       value={36}
     />
     <PickerItem
+      color=""
       key="37"
       label="37 "
       testID="minutesItem"
       value={37}
     />
     <PickerItem
+      color=""
       key="38"
       label="38 "
       testID="minutesItem"
       value={38}
     />
     <PickerItem
+      color=""
       key="39"
       label="39 "
       testID="minutesItem"
       value={39}
     />
     <PickerItem
+      color=""
       key="40"
       label="40 "
       testID="minutesItem"
       value={40}
     />
     <PickerItem
+      color=""
       key="41"
       label="41 "
       testID="minutesItem"
       value={41}
     />
     <PickerItem
+      color=""
       key="42"
       label="42 "
       testID="minutesItem"
       value={42}
     />
     <PickerItem
+      color=""
       key="43"
       label="43 "
       testID="minutesItem"
       value={43}
     />
     <PickerItem
+      color=""
       key="44"
       label="44 "
       testID="minutesItem"
       value={44}
     />
     <PickerItem
+      color=""
       key="45"
       label="45 "
       testID="minutesItem"
       value={45}
     />
     <PickerItem
+      color=""
       key="46"
       label="46 "
       testID="minutesItem"
       value={46}
     />
     <PickerItem
+      color=""
       key="47"
       label="47 "
       testID="minutesItem"
       value={47}
     />
     <PickerItem
+      color=""
       key="48"
       label="48 "
       testID="minutesItem"
       value={48}
     />
     <PickerItem
+      color=""
       key="49"
       label="49 "
       testID="minutesItem"
       value={49}
     />
     <PickerItem
+      color=""
       key="50"
       label="50 "
       testID="minutesItem"
       value={50}
     />
     <PickerItem
+      color=""
       key="51"
       label="51 "
       testID="minutesItem"
       value={51}
     />
     <PickerItem
+      color=""
       key="52"
       label="52 "
       testID="minutesItem"
       value={52}
     />
     <PickerItem
+      color=""
       key="53"
       label="53 "
       testID="minutesItem"
       value={53}
     />
     <PickerItem
+      color=""
       key="54"
       label="54 "
       testID="minutesItem"
       value={54}
     />
     <PickerItem
+      color=""
       key="55"
       label="55 "
       testID="minutesItem"
       value={55}
     />
     <PickerItem
+      color=""
       key="56"
       label="56 "
       testID="minutesItem"
       value={56}
     />
     <PickerItem
+      color=""
       key="57"
       label="57 "
       testID="minutesItem"
       value={57}
     />
     <PickerItem
+      color=""
       key="58"
       label="58 "
       testID="minutesItem"
       value={58}
     />
     <PickerItem
+      color=""
       key="59"
       label="59 "
       testID="minutesItem"
@@ -548,360 +632,420 @@ exports[`ReactNativeSimpleTimePicker should render 1`] = `
     testID="secondsPicker"
   >
     <PickerItem
+      color=""
       key="0"
       label="0 "
       testID="secondsItem"
       value={0}
     />
     <PickerItem
+      color=""
       key="1"
       label="1 "
       testID="secondsItem"
       value={1}
     />
     <PickerItem
+      color=""
       key="2"
       label="2 "
       testID="secondsItem"
       value={2}
     />
     <PickerItem
+      color=""
       key="3"
       label="3 "
       testID="secondsItem"
       value={3}
     />
     <PickerItem
+      color=""
       key="4"
       label="4 "
       testID="secondsItem"
       value={4}
     />
     <PickerItem
+      color=""
       key="5"
       label="5 "
       testID="secondsItem"
       value={5}
     />
     <PickerItem
+      color=""
       key="6"
       label="6 "
       testID="secondsItem"
       value={6}
     />
     <PickerItem
+      color=""
       key="7"
       label="7 "
       testID="secondsItem"
       value={7}
     />
     <PickerItem
+      color=""
       key="8"
       label="8 "
       testID="secondsItem"
       value={8}
     />
     <PickerItem
+      color=""
       key="9"
       label="9 "
       testID="secondsItem"
       value={9}
     />
     <PickerItem
+      color=""
       key="10"
       label="10 "
       testID="secondsItem"
       value={10}
     />
     <PickerItem
+      color=""
       key="11"
       label="11 "
       testID="secondsItem"
       value={11}
     />
     <PickerItem
+      color=""
       key="12"
       label="12 "
       testID="secondsItem"
       value={12}
     />
     <PickerItem
+      color=""
       key="13"
       label="13 "
       testID="secondsItem"
       value={13}
     />
     <PickerItem
+      color=""
       key="14"
       label="14 "
       testID="secondsItem"
       value={14}
     />
     <PickerItem
+      color=""
       key="15"
       label="15 "
       testID="secondsItem"
       value={15}
     />
     <PickerItem
+      color=""
       key="16"
       label="16 "
       testID="secondsItem"
       value={16}
     />
     <PickerItem
+      color=""
       key="17"
       label="17 "
       testID="secondsItem"
       value={17}
     />
     <PickerItem
+      color=""
       key="18"
       label="18 "
       testID="secondsItem"
       value={18}
     />
     <PickerItem
+      color=""
       key="19"
       label="19 "
       testID="secondsItem"
       value={19}
     />
     <PickerItem
+      color=""
       key="20"
       label="20 "
       testID="secondsItem"
       value={20}
     />
     <PickerItem
+      color=""
       key="21"
       label="21 "
       testID="secondsItem"
       value={21}
     />
     <PickerItem
+      color=""
       key="22"
       label="22 "
       testID="secondsItem"
       value={22}
     />
     <PickerItem
+      color=""
       key="23"
       label="23 "
       testID="secondsItem"
       value={23}
     />
     <PickerItem
+      color=""
       key="24"
       label="24 "
       testID="secondsItem"
       value={24}
     />
     <PickerItem
+      color=""
       key="25"
       label="25 "
       testID="secondsItem"
       value={25}
     />
     <PickerItem
+      color=""
       key="26"
       label="26 "
       testID="secondsItem"
       value={26}
     />
     <PickerItem
+      color=""
       key="27"
       label="27 "
       testID="secondsItem"
       value={27}
     />
     <PickerItem
+      color=""
       key="28"
       label="28 "
       testID="secondsItem"
       value={28}
     />
     <PickerItem
+      color=""
       key="29"
       label="29 "
       testID="secondsItem"
       value={29}
     />
     <PickerItem
+      color=""
       key="30"
       label="30 "
       testID="secondsItem"
       value={30}
     />
     <PickerItem
+      color=""
       key="31"
       label="31 "
       testID="secondsItem"
       value={31}
     />
     <PickerItem
+      color=""
       key="32"
       label="32 "
       testID="secondsItem"
       value={32}
     />
     <PickerItem
+      color=""
       key="33"
       label="33 "
       testID="secondsItem"
       value={33}
     />
     <PickerItem
+      color=""
       key="34"
       label="34 "
       testID="secondsItem"
       value={34}
     />
     <PickerItem
+      color=""
       key="35"
       label="35 "
       testID="secondsItem"
       value={35}
     />
     <PickerItem
+      color=""
       key="36"
       label="36 "
       testID="secondsItem"
       value={36}
     />
     <PickerItem
+      color=""
       key="37"
       label="37 "
       testID="secondsItem"
       value={37}
     />
     <PickerItem
+      color=""
       key="38"
       label="38 "
       testID="secondsItem"
       value={38}
     />
     <PickerItem
+      color=""
       key="39"
       label="39 "
       testID="secondsItem"
       value={39}
     />
     <PickerItem
+      color=""
       key="40"
       label="40 "
       testID="secondsItem"
       value={40}
     />
     <PickerItem
+      color=""
       key="41"
       label="41 "
       testID="secondsItem"
       value={41}
     />
     <PickerItem
+      color=""
       key="42"
       label="42 "
       testID="secondsItem"
       value={42}
     />
     <PickerItem
+      color=""
       key="43"
       label="43 "
       testID="secondsItem"
       value={43}
     />
     <PickerItem
+      color=""
       key="44"
       label="44 "
       testID="secondsItem"
       value={44}
     />
     <PickerItem
+      color=""
       key="45"
       label="45 "
       testID="secondsItem"
       value={45}
     />
     <PickerItem
+      color=""
       key="46"
       label="46 "
       testID="secondsItem"
       value={46}
     />
     <PickerItem
+      color=""
       key="47"
       label="47 "
       testID="secondsItem"
       value={47}
     />
     <PickerItem
+      color=""
       key="48"
       label="48 "
       testID="secondsItem"
       value={48}
     />
     <PickerItem
+      color=""
       key="49"
       label="49 "
       testID="secondsItem"
       value={49}
     />
     <PickerItem
+      color=""
       key="50"
       label="50 "
       testID="secondsItem"
       value={50}
     />
     <PickerItem
+      color=""
       key="51"
       label="51 "
       testID="secondsItem"
       value={51}
     />
     <PickerItem
+      color=""
       key="52"
       label="52 "
       testID="secondsItem"
       value={52}
     />
     <PickerItem
+      color=""
       key="53"
       label="53 "
       testID="secondsItem"
       value={53}
     />
     <PickerItem
+      color=""
       key="54"
       label="54 "
       testID="secondsItem"
       value={54}
     />
     <PickerItem
+      color=""
       key="55"
       label="55 "
       testID="secondsItem"
       value={55}
     />
     <PickerItem
+      color=""
       key="56"
       label="56 "
       testID="secondsItem"
       value={56}
     />
     <PickerItem
+      color=""
       key="57"
       label="57 "
       testID="secondsItem"
       value={57}
     />
     <PickerItem
+      color=""
       key="58"
       label="58 "
       testID="secondsItem"
       value={58}
     />
     <PickerItem
+      color=""
       key="59"
       label="59 "
       testID="secondsItem"
