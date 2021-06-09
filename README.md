@@ -5,14 +5,12 @@
 ## Install
 
 ```
-npm install react-native-simple-time-picker
-
 # React Native
-npm install @react-native-picker/picker
+npm install react-native-simple-time-picker @react-native-picker/picker
 npx pod-install
 
 # Expo
-expo install @react-native-picker/picker
+expo install react-native-simple-time-picker @react-native-picker/picker
 ```
 
 ## Usage
