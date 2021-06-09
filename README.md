@@ -1,7 +1,7 @@
 <!-- prettier-ignore -->
 | iOS | Android |
 | --- | --- |
-| <image src="./screenshots/iOS.png" width="300" /> | <image src="./screenshots/Android.png" width="300" /> |
+| <img src="./screenshots/iOS.png" width="300" /> | <img src="./screenshots/Android.png" width="300" /> |
 
 ## Install
 
