@@ -20,12 +20,10 @@ const YourApp = () => {
       </Text>
       <Button title="RESET" onPress={handleReset} />
       <TimePicker
-        textColor="red"
         value={{hours, minutes}}
         onChange={handleChange}
         itemStyle={styles.itemStyle}
-        hoursInterval={5}
-        minutesInterval={15}
+        isAmpm
       />
     </View>
   );

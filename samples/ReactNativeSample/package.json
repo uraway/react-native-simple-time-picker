@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "watch": "cpx '../../lib/**/*.*' ./lib --watch",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -13,13 +14,14 @@
     "@react-native-picker/picker": "1.16.1",
     "react": "17.0.2",
     "react-native": "0.64.2",
-    "react-native-simple-time-picker": "1.3.2"
+    "react-native-simple-time-picker": "1.3.3"
   },
   "devDependencies": {
     "@babel/core": "7.14.3",
     "@babel/runtime": "7.14.0",
     "@react-native-community/eslint-config": "2.0.0",
     "babel-jest": "27.0.2",
+    "cpx": "1.5.0",
     "eslint": "7.14.0",
     "jest": "27.0.4",
     "metro-react-native-babel-preset": "0.64.0",

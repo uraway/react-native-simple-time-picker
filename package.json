@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-time-picker",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": false,
   "license": "MIT",
   "author": {
@@ -47,26 +47,28 @@
     "typescript": "4.3.2"
   },
   "files": [
-    "sample/lib"
+    "lib"
   ],
-  "main": "sample/lib/index.js",
-  "types": "sample/lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "eslint": "eslint 'src/*{js,tsx}'",
     "eslint:fix": "eslint --fix 'src/*{js,tsx}'",
     "prettier": "prettier -c 'src/*.{js,tsx}'",
     "prettier:fix": "prettier -w 'src/*.{js,tsx}'",
     "build": "tsc",
-    "ios": "cd sample && react-native run-ios",
-    "android": "cd sample && react-native run-android",
     "prepublish": "yarn build",
-    "start": "cd sample && yarn start",
-    "test": "jest"
+    "start": "tsc --watch",
+    "test": "jest",
+    "expo:android": "cd samples/expo-sample && yarn watch & yarn android",
+    "expo:ios": "cd samples/expo-sample && yarn watch & yarn ios",
+    "expo:start": "cd samples/expo-sample && yarn watch & yarn start",
+    "rn:android": "cd samples/ReactNativeSample && yarn watch & yarn android",
+    "rn:ios": "cd samples/ReactNativeSample && yarn watch & yarn ios",
+    "rn:start": "cd samples/ReactNativeSample && yarn watch & yarn start"
   },
   "jest": {
     "preset": "jest-expo"
   },
-  "dependencies": {
-    "tslib": "^2.1.0"
-  }
+  "dependencies": {}
 }
