@@ -31,6 +31,6 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install
 
-      - run: yarn eslint
+      - run: yarn eslint && yarn prettier
 
       - run: yarn test
