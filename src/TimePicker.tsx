@@ -1,6 +1,9 @@
 import * as React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {PickerProps} from '@react-native-picker/picker/typings/Picker';
+import {
+  PickerItemProps,
+  PickerProps,
+} from '@react-native-picker/picker/typings/Picker';
 import {Picker} from '@react-native-picker/picker';
 import {zeroPad} from './utils/zeroPad';
 
@@ -11,7 +14,7 @@ export type ValueMap = {
   hours: number;
   minutes: number;
   seconds: number;
-  ampm?: 'am' | 'pm';
+  ampm?: 'am' | 'pm' | undefined;
 };
 
 export interface TimePickerProps extends PickerProps {
@@ -21,7 +24,7 @@ export interface TimePickerProps extends PickerProps {
   minutesUnit?: string;
   secondsUnit?: string;
   zeroPadding?: boolean;
-  textColor?: string;
+  textColor?: PickerItemProps['color'];
   hoursInterval?: number;
   minutesInterval?: number;
   secondsInterval?: number;
@@ -41,7 +44,7 @@ export function TimePicker({
   minutesUnit,
   secondsUnit,
   zeroPadding = false,
-  textColor,
+  textColor = '',
   hoursInterval = 1,
   minutesInterval = 1,
   secondsInterval = 1,
@@ -79,15 +82,13 @@ export function TimePicker({
   const [internalSeconds, setInternalSeconds] = React.useState(
     value?.minutes ?? 0,
   );
-  const [internalAmpm, setInternalAmpm] = React.useState(
-    isAmpm ? value?.ampm : undefined,
-  );
+  const [internalAmpm, setInternalAmpm] = React.useState(value?.ampm);
 
   React.useEffect(() => {
     setInternalHours(value?.hours ?? 0);
     setInternalMinutes(value?.minutes ?? 0);
     setInternalSeconds(value?.seconds ?? 0);
-    setInternalAmpm(value?.ampm ?? undefined);
+    setInternalAmpm(value?.ampm);
   }, [value]);
 
   const getLabel = (i: number, unit?: string) => {
@@ -191,9 +192,9 @@ export function TimePicker({
     return items;
   };
 
-  const handleChangeHours = (hours) => {
+  const handleChangeHours = (hours: number) => {
     setInternalHours(hours);
-    const newValue = {
+    const newValue: ValueMap = {
       hours,
       minutes: internalMinutes,
       seconds: internalSeconds,
@@ -202,9 +203,9 @@ export function TimePicker({
     onChange?.(newValue);
   };
 
-  const handleChangeMinutes = (minutes) => {
+  const handleChangeMinutes = (minutes: number) => {
     setInternalMinutes(minutes);
-    const newValue = {
+    const newValue: ValueMap = {
       hours: internalHours,
       minutes,
       seconds: internalSeconds,
@@ -213,9 +214,9 @@ export function TimePicker({
     onChange?.(newValue);
   };
 
-  const handleChangeSeconds = (seconds) => {
+  const handleChangeSeconds = (seconds: number) => {
     setInternalSeconds(seconds);
-    const newValue = {
+    const newValue: ValueMap = {
       hours: internalHours,
       minutes: internalMinutes,
       seconds,
@@ -224,9 +225,9 @@ export function TimePicker({
     onChange?.(newValue);
   };
 
-  const handleChangeAmpm = (ampmValue) => {
+  const handleChangeAmpm = (ampmValue?: 'am' | 'pm') => {
     setInternalAmpm(ampmValue);
-    const newValue = {
+    const newValue: ValueMap = {
       hours: internalHours,
       minutes: internalMinutes,
       seconds: internalSeconds,
@@ -239,44 +240,44 @@ export function TimePicker({
     <View style={styles.container}>
       {pickerShows.includes('hours') && (
         <Picker
+          {...others}
           testID="hoursPicker"
           style={styles.picker}
           selectedValue={internalHours}
-          onValueChange={(itemValue) => handleChangeHours(itemValue)}
-          {...others}>
+          onValueChange={handleChangeHours}>
           {getHoursItems()}
         </Picker>
       )}
 
       {pickerShows.includes('minutes') && (
         <Picker
+          {...others}
           testID="minutesPicker"
           style={styles.picker}
           selectedValue={internalMinutes}
-          onValueChange={(itemValue) => handleChangeMinutes(itemValue)}
-          {...others}>
+          onValueChange={handleChangeMinutes}>
           {getMinutesItems()}
         </Picker>
       )}
 
       {pickerShows.includes('seconds') && (
         <Picker
+          {...others}
           testID="secondsPicker"
           style={styles.picker}
           selectedValue={internalSeconds}
-          onValueChange={(itemValue) => handleChangeSeconds(itemValue)}
-          {...others}>
+          onValueChange={handleChangeSeconds}>
           {getSecondsItems()}
         </Picker>
       )}
 
       {isAmpm && (
         <Picker
+          {...others}
           testID="ampmPicker"
           style={styles.picker}
           selectedValue={internalAmpm}
-          onValueChange={(itemValue) => handleChangeAmpm(itemValue)}
-          {...others}>
+          onValueChange={handleChangeAmpm}>
           <Picker.Item
             testID="amItem"
             value="am"
