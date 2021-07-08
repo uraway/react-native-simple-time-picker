@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
-    "@types/react": "17.0.13",
+    "@types/react": "17.0.14",
     "@types/react-native": "0.64.11",
     "cpx": "1.5.0",
     "typescript": "4.3.5"
