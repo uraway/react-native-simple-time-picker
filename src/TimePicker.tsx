@@ -238,7 +238,8 @@ export function TimePicker({
           testID="hoursPicker"
           style={styles.picker}
           selectedValue={internalValue?.hours}
-          onValueChange={handleChangeHours}>
+          onValueChange={handleChangeHours}
+        >
           {getHoursItems()}
         </Picker>
       )}
@@ -249,7 +250,8 @@ export function TimePicker({
           testID="minutesPicker"
           style={styles.picker}
           selectedValue={internalValue?.minutes}
-          onValueChange={handleChangeMinutes}>
+          onValueChange={handleChangeMinutes}
+        >
           {getMinutesItems()}
         </Picker>
       )}
@@ -260,7 +262,8 @@ export function TimePicker({
           testID="secondsPicker"
           style={styles.picker}
           selectedValue={internalValue?.seconds}
-          onValueChange={handleChangeSeconds}>
+          onValueChange={handleChangeSeconds}
+        >
           {getSecondsItems()}
         </Picker>
       )}
@@ -271,7 +274,8 @@ export function TimePicker({
           testID="ampmPicker"
           style={styles.picker}
           selectedValue={internalValue?.ampm}
-          onValueChange={handleChangeAmpm}>
+          onValueChange={handleChangeAmpm}
+        >
           <Picker.Item
             testID="amItem"
             value="am"
