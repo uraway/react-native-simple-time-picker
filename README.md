@@ -3,6 +3,8 @@
 | --- | --- |
 | <img src="./screenshots/iOS.png" width="300" /> | <img src="./screenshots/Android.png" width="300" /> |
 
+Simple wrapper component on [@react-native-picker/picker](https://www.npmjs.com/package/@react-native-picker/picker).
+
 ## Install
 
 ```
@@ -33,22 +35,24 @@ const YourApp = () => {
 
 ## Props
 
-| Property         | Type                               | Default                  | Description                                                                                  |
-| ---------------- | ---------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
-| value            | { minutes: number, hours: number } | { minutes: 0, hours: 0 } |                                                                                              |
-| onChange         | Function                           |                          | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
-| pickerShows      | Array                              | `["hours", "minutes"]`   | Pickers to display (`e.g. ["hours", "minutes", "seconds"]`)                                  |
-| hoursUnit        | String                             | ''                       | Hours Unit for label                                                                         |
-| minutesUnit      | String                             | ''                       | Minutes Unit for label                                                                       |
-| secondsUnit      | String                             | ''                       | Seconds Unit for label                                                                       |
-| zeroPadding      | Boolean                            | false                    | Whether to pad numeric labels with zero                                                      |
-| textColor        | String                             |                          | Color of the picker item's text                                                              |
-| hoursInterval    | Integer                            | 1                        |                                                                                              |
-| minutesInterval  | Integer                            | 1                        |                                                                                              |
-| secondsInterval  | Integer                            | 1                        |                                                                                              |
-| emptyLabel       | String                             | undefined                | Enable empty option with this label                                                          |
-| isAmpm           | Boolean                            | false                    | Whether to display am/pm picker                                                              |
-| ampmLocalization | { am: string, pm: string }         | { am: 'am', pm: 'pm' }   | Label for am/pm picker items                                                                 |
+<!-- prettier-ignore -->
+| Property         | Type                       | Default                | Description                                                                                  |
+| ---------------- | -------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- |
+| value        | `{ hours: number, minutes: number, seconds: number, ampm?: 'am' \| 'pm' }`  |  `{ hours: 0, minutes: 0, seconds: 0 }` | Controlled state               |
+| defaultValue | `{ hours: number, minutes: number, seconds: number, ampm?: 'am' \| 'pm' }`  |  `{ hours: 0, minutes: 0, seconds: 0 }` | Controlled state               |
+| onChange         | Function                   |                        | Callback function for when values are changed `({ hours: number, minutes: number }) => void` |
+| pickerShows      | Array                      | `["hours", "minutes"]` | Pickers to display (`e.g. ["hours", "minutes", "seconds"]`)                                  |
+| hoursUnit        | String                     | ''                     | Hours Unit for label                                                                         |
+| minutesUnit      | String                     | ''                     | Minutes Unit for label                                                                       |
+| secondsUnit      | String                     | ''                     | Seconds Unit for label                                                                       |
+| zeroPadding      | Boolean                    | false                  | Whether to pad numeric labels with zero                                                      |
+| textColor        | String                     |                        | Color of the picker item's text                                                              |
+| hoursInterval    | Integer                    | 1                      |                                                                                              |
+| minutesInterval  | Integer                    | 1                      |                                                                                              |
+| secondsInterval  | Integer                    | 1                      |                                                                                              |
+| emptyLabel       | String                     | undefined              | Enable empty option with this label                                                          |
+| isAmpm           | Boolean                    | false                  | Whether to display am/pm picker                                                              |
+| ampmLocalization | { am: string, pm: string } | { am: 'am', pm: 'pm' } | Label for am/pm picker items                                                                 |
 
 ## Preview
 
