@@ -18,18 +18,20 @@ expo install react-native-simple-time-picker @react-native-picker/picker
 
 ## Usage
 
-```javascript
+```tsx
 import React from 'react';
-import {TimePicker} from 'react-native-simple-time-picker';
+import {TimePicker, ValueMap} from 'react-native-simple-time-picker';
 
 const YourApp = () => {
-  const [hours, setHours] = React.useState(0);
-  const [minutes, setMinutes] = React.useState(0);
-  const handleChange = (value: {hours: number, minutes: number}) => {
-    setHours(value.hours);
-    setMinutes(value.minutes);
+  const [value, setValue] = useState<ValueMap>({
+    hours: 1,
+    minutes: 0,
+    seconds: 0,
+  });
+  const handleChange = (newValue: ValueMap) => {
+    setValue(newValue);
   };
-  return <TimePicker value={{hours, minutes}} onChange={handleChange} />;
+  return <TimePicker value={value} onChange={handleChange} />;
 };
 ```
 
