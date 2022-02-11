@@ -53,3 +53,7 @@ const YourApp = () => {
 ## Preview
 
 https://snack.expo.io/@uraway/react-native-simple-time-picker
+
+## LICENSE
+
+MIT
