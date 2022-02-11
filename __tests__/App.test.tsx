@@ -4,6 +4,8 @@ import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {TimePicker} from '../src';
 
+const onChange = jest.fn();
+
 describe('ReactNativeSimpleTimePicker', () => {
   it('should render', () => {
     const wrapper = shallow<typeof TimePicker>(
@@ -11,6 +13,28 @@ describe('ReactNativeSimpleTimePicker', () => {
     );
     expect(wrapper.length).toBe(1);
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should render with defaultValue', () => {
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker
+        defaultValue={{
+          hours: 20,
+          minutes: 10,
+        }}
+        pickerShows={['hours', 'minutes', 'seconds']}
+      />,
+    );
+
+    expect(wrapper.find({testID: 'hoursPicker'}).props().selectedValue).toBe(
+      20,
+    );
+    expect(wrapper.find({testID: 'minutesPicker'}).props().selectedValue).toBe(
+      10,
+    );
+    expect(wrapper.find({testID: 'secondsPicker'}).props().selectedValue).toBe(
+      0,
+    );
   });
 
   it('should render all hours and minutes items', () => {
@@ -139,22 +163,62 @@ describe('ReactNativeSimpleTimePicker', () => {
   });
 
   it('should update state', async () => {
-    const wrapper = shallow<typeof TimePicker>(<TimePicker />);
+    const wrapper = shallow<typeof TimePicker>(
+      <TimePicker
+        onChange={onChange}
+        pickerShows={['hours', 'minutes', 'seconds']}
+      />,
+    );
 
     wrapper.find({testID: 'hoursPicker'}).props().onValueChange(20, 20);
     expect(wrapper.find({testID: 'hoursPicker'}).props().selectedValue).toBe(
       20,
     );
+    expect(onChange).toBeCalledWith({
+      hours: 20,
+      minutes: 0,
+      seconds: 0,
+    });
 
     wrapper.find({testID: 'minutesPicker'}).props().onValueChange(30, 30);
     expect(wrapper.find({testID: 'minutesPicker'}).props().selectedValue).toBe(
       30,
     );
+    expect(onChange).toBeCalledWith({
+      hours: 20,
+      minutes: 30,
+      seconds: 0,
+    });
 
     wrapper.find({testID: 'minutesPicker'}).props().onValueChange(5, 5);
     expect(wrapper.find({testID: 'minutesPicker'}).props().selectedValue).toBe(
       5,
     );
+    expect(onChange).toBeCalledWith({
+      hours: 20,
+      minutes: 5,
+      seconds: 0,
+    });
+
+    wrapper.find({testID: 'secondsPicker'}).props().onValueChange(5, 5);
+    expect(wrapper.find({testID: 'secondsPicker'}).props().selectedValue).toBe(
+      5,
+    );
+    expect(onChange).toBeCalledWith({
+      hours: 20,
+      minutes: 5,
+      seconds: 5,
+    });
+
+    wrapper.find({testID: 'hoursPicker'}).props().onValueChange(10, 10);
+    expect(wrapper.find({testID: 'hoursPicker'}).props().selectedValue).toBe(
+      10,
+    );
+    expect(onChange).toBeCalledWith({
+      hours: 10,
+      minutes: 5,
+      seconds: 5,
+    });
   });
 
   it('should render with zeroPadding', () => {
