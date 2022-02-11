@@ -12,7 +12,7 @@
     "url": "git://github.com/uraway/react-native-simple-time-picker.git"
   },
   "peerDependencies": {
-    "@react-native-picker/picker": "1",
+    "@react-native-picker/picker": "1 || 2",
     "react": "^16.0 || ^17.0.0",
     "react-native": ">=0.57"
   },
@@ -20,7 +20,7 @@
     "@babel/core": "7.17.2",
     "@babel/runtime": "7.17.2",
     "@react-native-community/eslint-config": "3.0.1",
-    "@react-native-picker/picker": "1.16.8",
+    "@react-native-picker/picker": "2.2.1",
     "@types/enzyme": "3.10.10",
     "@types/jest": "27.4.0",
     "@types/react": "17.0.39",
