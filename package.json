@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-time-picker",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "private": false,
   "license": "MIT",
   "author": {
@@ -11,6 +11,15 @@
     "type": "git",
     "url": "git://github.com/uraway/react-native-simple-time-picker.git"
   },
+  "keywords": [
+    "react-native",
+    "picker",
+    "time-picker",
+    "react-native-picker",
+    "hours",
+    "minutes",
+    "seconds"
+  ],
   "peerDependencies": {
     "@react-native-picker/picker": "1 || 2",
     "react": "^16.0 || ^17.0.0",
