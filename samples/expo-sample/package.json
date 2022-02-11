@@ -9,7 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-picker/picker": "1.16.8",
+    "@react-native-picker/picker": "2.2.1",
     "expo": "42.0.5",
     "expo-status-bar": "1.1.0",
     "react": "17.0.2",
