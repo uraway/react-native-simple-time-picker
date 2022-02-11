@@ -11,7 +11,7 @@ exports[`ReactNativeSimpleTimePicker should render 1`] = `
   <Picker
     mode="dialog"
     onValueChange={[Function]}
-    selectedValue={0}
+    selectedValue={1}
     style={
       Object {
         "flex": 1,

@@ -1,28 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View, Button, StyleSheet} from 'react-native';
-import {TimePicker} from 'react-native-simple-time-picker';
+import {TimePicker, ValueMap} from 'react-native-simple-time-picker';
 
 const YourApp = () => {
-  const [hours, setHours] = React.useState(0);
-  const [minutes, setMinutes] = React.useState(0);
-  const handleChange = (value: {hours: number; minutes: number}) => {
-    setHours(value.hours);
-    setMinutes(value.minutes);
+  const [value, setValue] = useState<ValueMap>({
+    hours: 1,
+    minutes: 0,
+    seconds: 0,
+    ampm: 'am',
+  });
+
+  const handleChange = (newValue: ValueMap) => {
+    setValue(newValue);
   };
   const handleReset = () => {
-    setHours(0);
-    setMinutes(0);
+    setValue({
+      hours: 1,
+      minutes: 0,
+      seconds: 0,
+      ampm: 'am',
+    });
   };
   return (
     <View style={styles.container}>
-      <Text>
-        {hours} : {minutes}
-      </Text>
+      <Text>{JSON.stringify(value)}</Text>
       <Button title="RESET" onPress={handleReset} />
       <TimePicker
-        value={{hours, minutes}}
+        value={value}
         onChange={handleChange}
         itemStyle={styles.itemStyle}
+        pickerShows={['hours', 'minutes', 'seconds']}
         isAmpm
       />
     </View>
