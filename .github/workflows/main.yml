@@ -23,7 +23,7 @@ jobs:
       - run: yarn test
 
   publish:
-    if: github.event_name == 'push' && github.head_ref == 'master')
+    if: github.event_name == 'push' && github.head_ref == 'master'
     needs: [build]
     runs-on: ubuntu-latest
     steps:
