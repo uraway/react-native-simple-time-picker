@@ -21,7 +21,7 @@
     "@babel/runtime": "7.17.2",
     "@react-native-community/eslint-config": "3.0.1",
     "@react-native-picker/picker": "2.2.1",
-    "@types/enzyme": "3.10.10",
+    "@types/enzyme": "3.10.11",
     "@types/jest": "27.4.0",
     "@types/react": "17.0.39",
     "@types/react-native": "0.66.15",
