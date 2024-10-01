@@ -80,6 +80,6 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@react-stately/utils": "3.3.0"
+    "@react-stately/utils": "3.10.4"
   }
 }
