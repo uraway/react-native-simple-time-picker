@@ -1771,10 +1771,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz#e42b1bef12d2415411519fd528e64b593b1363dc"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
-"@react-native-picker/picker@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.4.0.tgz#7ca2e01a3bdf854ee01ca752762ffa73c0e83313"
-  integrity sha512-duGZc3a8Qa21YPrA4U3oR9NAUzBA66FTjubGK2CodA6rNjiwN+xC32hOZ5unkf4qD3DqLWeoPjg3fYf54bVMjA==
+"@react-native-picker/picker@2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@react-native-picker/picker/-/picker-2.12.0.tgz#a48a2736e687f211866feef13d7dbde7474184bd"
+  integrity sha512-+UbLPRsCx0IfKBVnYfK09imOOnGVHDz0UYNB4xs4A6RF/hMAAaJHNr6kMTDw17GqEXshibYOy2/SGHUvHE300w==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
